@@ -51,12 +51,12 @@
 
 #network {
   color: #3b82f6;
-  margin-right: 8px;
+  margin-right: 0px;
 }
 
 #pulseaudio {
   color: #14b8a6;
-  margin-right: 4px;
+  margin-right: 7px;
 }
 
 #cpu {
@@ -76,4 +76,5 @@
 
 #custom-powermenu {
   color: #f43f5e;
+  margin-right: 4px;
 }
