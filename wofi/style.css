@@ -1,0 +1,94 @@
+window {
+  /* border: 2px solid red; */
+  background-color: #1e1e2e; /* Catppuccin Base */
+  padding: 50px;
+}
+
+#input {
+  padding: 15px 25px;
+  background-color: #313244; /* Catppuccin Surface0 */
+  color: #cdd6f4; /* Catppuccin Text */
+  border-radius: 20px;
+  margin: 20px 15px;
+  border: 1px solid #45475a; /* Catppuccin Surface1 */
+  font-size: 16px;
+  min-height: 20px;
+}
+
+#input:focus,
+#input:selected {
+  border-color: #89b4fa; /* Catppuccin Blue */
+  box-shadow: 0 0 8px rgba(137, 180, 250, 0.3);
+}
+
+#entry:selected,
+#entry:focus {
+  border-color: transparent;
+}
+
+#inner-box {
+  margin: 20px;
+}
+
+#img {
+  margin: 10px 10px;
+}
+
+#entry {
+  border-radius: 20px;
+  color: #cdd6f4; /* Catppuccin Text */
+  padding: 8px;
+}
+
+#entry:hover {
+  background-color: #45475a; /* Catppuccin Surface1 */
+  transition: all 0.2s ease-in-out;
+}
+
+#text:selected,
+#img:selected {
+  background-color: transparent;
+}
+
+#entry:selected {
+  background-color: #585b70; /* Catppuccin Surface2 */
+  color: #cdd6f4; /* Catppuccin Text */
+}
+
+/* Additional Catppuccin styling */
+#text {
+  color: #cdd6f4; /* Catppuccin Text */
+}
+
+#unselected {
+  color: #bac2de; /* Catppuccin Subtext1 */
+}
+
+#selected {
+  color: #cdd6f4; /* Catppuccin Text */
+  font-weight: bold;
+}
+
+/* Scrollbar styling */
+#scroll scrollbar {
+  background: #181825; /* Catppuccin Crust */
+  border-radius: 10px;
+}
+
+#scroll scrollbar slider {
+  background: #585b70; /* Catppuccin Surface2 */
+  border-radius: 10px;
+  margin: 2px;
+}
+
+#scroll scrollbar slider:hover {
+  background: #6c7086; /* Catppuccin Overlay0 */
+}
+
+/* No results message */
+#noentry {
+  color: #f38ba8; /* Catppuccin Pink */
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
