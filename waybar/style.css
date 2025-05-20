@@ -1,15 +1,18 @@
 * {
   font-family: "Jetbrains Mono NerdFont";
+  font-size: 14px;
 }
 
 #waybar {
-  /*background: #171717;*/ 
-  background: #0a0a0a;
+  background: #171717; 
+  /*background: #0a0a0a;*/
   color: #fff;
 }
 
 #clock {
   color: #fff;
+  margin-right: 4px;
+  margin-left: 9px;
 }
 
 #tray {
@@ -18,13 +21,13 @@
 
 #workspaces {
     border-radius: 24px 24px 24px 24px;
-    margin: 0; /* Set margin to 0 as requested */
+    margin: 4px; 
     background-color: rgba(255, 255, 255, 0.08);
 }
 #workspaces button {
     min-width: 10px;
     border-radius: 24px;
-    margin: 2px 8px;
+    margin: 2px 2px;
     transition: all 0.3s ease-out;
     color: #ffffff;
     padding: 1px 8px;
@@ -40,7 +43,7 @@
     background: #6c7a96; /* Stormy sea grey-blue */
     color: #1e1e2e; /* Dark color for contrast */
     border-radius: 24px; /* Rounded sides (pill shape) */
-    padding: 1px 6px; /* Adjusted for 32px bar */
+    padding: 1px 7px; /* Adjusted for 32px bar */
     min-width: 40px; /* Reduced minimum width */
 }#window {
   color: #fff;
