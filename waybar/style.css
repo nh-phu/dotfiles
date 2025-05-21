@@ -4,9 +4,9 @@
 }
 
 #waybar {
-  /*background: #171717;*/ 
+  background: #171717; 
   /*background: #0a0a0a;*/
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(0,0,0,0.5);
   box-shadow: none;
   color: #fff;
 }
