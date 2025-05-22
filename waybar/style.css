@@ -39,7 +39,7 @@
     margin-right: 8px;
 }
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.08);
+	background: rgba(60, 20, 100, 0.2);
 }
 #workspaces button.active,
 #workspaces button.active:hover {

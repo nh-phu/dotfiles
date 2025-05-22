@@ -46,7 +46,6 @@
   },
 
   "hyprland/workspaces": {
-    "disable-scroll": true,
     "rotate": 0,
     "all-outputs": true,
     "active-only": false,
@@ -108,6 +107,7 @@
   },
   "memory": {
     "format": "󰫗 {}% ",
+    "on-click": "kitty -e btop",
     "tooltip": "false"
   },
   "cpu": {
@@ -153,6 +153,6 @@
   "custom/powermenu": {
     "format": "  ",
     "tooltip": false,
-    "on-click": "exec wlogout -p layer-shell"
+    "on-click": "wlogout -b 5"
   }
 }
