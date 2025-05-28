@@ -1,0 +1,127 @@
+# C.A.V.A. Configuration File
+# Place this file in ~/.config/cava/config
+
+# ==============================================================================
+# Input Configuration
+# ==============================================================================
+[input]
+# Input method for C.A.V.A.
+# 'pulse' for PulseAudio/PipeWire (most common on modern Arch Linux)
+# 'alsa' for direct ALSA access (less common for desktop audio)
+# 'fifo' for reading from a named pipe (advanced usage)
+method = pulse
+
+# Source for PulseAudio/PipeWire.
+# 'auto' tries to automatically find the correct monitor source.
+# If 'auto' doesn't work, you can find the specific monitor source
+# by running 'pactl list sources' or 'pw-top' in your terminal
+# and looking for a source ending with '.monitor' (e.g., alsa_output.pci-0000_00_1f.3.analog-stereo.monitor).
+source = auto
+
+# ==============================================================================
+# Output Configuration
+# ==============================================================================
+[output]
+# Output method for C.A.V.A.
+# 'raw' for ASCII character output (for terminal emulators)
+# 'ncurses' for traditional ncurses rendering (less flexible for transparency)
+method = ncurses
+bar_width = 2
+bar_spacing = 1
+
+# Data format for 'raw' output. 'ascii' is suitable for terminal visualization.
+data_format = ascii
+
+# ==============================================================================
+# General Settings
+# ==============================================================================
+[general]
+# Number of bars to display. More bars means more detail but wider visualizer.
+# The video you linked earlier seemed to have around 20-30 bars visible in one of the terminal screenshots.
+bars = 50
+
+# Frame rate in Hz. Higher values make the animation smoother but use more CPU.
+framerate = 60
+
+# Smoothing factor (0.0 - 1.0). Higher values result in smoother, less jumpy bars.
+# A good balance is usually between 0.3 and 0.6.
+smoothing_factor = 0.5
+
+# Whether to visualize in stereo (left/right channels separately).
+# 'yes' for stereo, 'no' for mono.
+stereo = yes
+
+# Falloff effect.
+# 'no' for no falloff
+# 'fixed' for a consistent falloff speed
+# 'exp' for an exponential falloff (bars drop faster when higher)
+# 'gravity' for a more natural, gravity-like falloff
+falloff = gravity
+
+# Minimum height of the bars in characters (0-100).
+min_height = 1
+
+# ==============================================================================
+# Colors Configuration
+# ==============================================================================
+[color]
+# C.A.V.A. can use basic terminal colors (black, red, green, yellow, blue, magenta, cyan, white)
+# or 256-color codes (0-255).
+# For a clean look in a transparent terminal, often only one or two colors are used for the bars.
+
+# Gradient colors for the bars. You can define multiple colors, and C.A.V.A. will
+# create a gradient from bottom to top.
+# Example for a simple blue gradient (like a common "cool" color scheme):
+#gradient = "25:40:100;100:150:255" # A subtle blue gradient (RGB values)
+
+# Or for a single solid color (e.g., a subtle white or a themed color):
+# gradient = "white"
+
+# Example for Catppuccin Mocha themed colors (you'll need to use their hex values
+# converted to RGB or appropriate 256-color codes if your terminal supports them)
+# For simplicity, let's use some common terminal colors or direct RGB values:
+#gradient = "red;yellow;green" # For a multi-color spectrum
+
+# Example using 256-color codes (if your terminal supports it)
+# `man ncmpcpp` or `256color.info` can help find codes.
+#gradient = "20;21;26;27;33;39" # Example blue tones
+
+# Background color. Often set to 'default' for terminal transparency.
+# Setting it to a specific color will override terminal transparency.
+gradient = 1
+gradient_count = 8
+
+gradient_color_1 = '#0F1C2E'  # Deep navy
+gradient_color_2 = '#152A46'  # Dark blue-gray
+gradient_color_3 = '#1C3A5E'  # Slate blue
+gradient_color_4 = '#245072'  # Sea blue
+gradient_color_5 = '#2B6C88'  # Ocean blue
+gradient_color_6 = '#3399AA'  # Blue cyan
+gradient_color_7 = '#5FC9E8'  # Light cyan
+gradient_color_8 = '#8ADDF1'  # Sky blue highlight
+
+background = default
+
+# ==============================================================================
+# Advanced Features (Uncomment and adjust if you need them)
+# ==============================================================================
+# [eq]
+# # Equalizer settings. Allows boosting/cutting specific frequency ranges.
+# # Use 'freq' for frequency and 'gain' for gain in dB.
+# # Example: boost bass
+# # freq = 50
+# # gain = 6
+
+# # You can define multiple frequency bands:
+# # freq = 100;200;400;800;1600;3200;6400;12800
+# # gain = 0;0;0;0;0;0;0;0 # All flat
+
+# ==============================================================================
+# Bar appearance (optional)
+# ==============================================================================
+# bar_delimiter = 1 # Number of spaces between bars
+
+# ==============================================================================
+# Global Options
+# ==============================================================================
+# log_level = 0 # 0=quiet, 1=errors, 2=warnings, 3=info, 4=debug
