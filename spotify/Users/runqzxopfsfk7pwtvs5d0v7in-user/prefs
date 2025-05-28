@@ -1,0 +1,4 @@
+connect.mdns_devices="[]"
+connect.dial_devices="[{\"address\":\"192.168.0.100\",\"app_state\":\"MISSING\",\"created_timestamp\":1748247331,\"device_id\":\"559d6d99-3370-400d-afbb-1bb1512173a1\",\"dial_location_url\":\"http://192.168.0.100:7678/nservice/\",\"display_name\":\"[TV] Samsung Q60 Series (50)\",\"last_seen\":1748247388,\"manufacturer\":\"Samsung Electronics\",\"model_name\":\"QA50Q60TAKXXV\",\"product_cap\":\"Resolution:1920X1080,Tizen,Y2017\",\"public_ip\":\"27.76.96.239\",\"wol\":{\"all_interfaces\":false,\"delay_ms\":250,\"mac\":\"4cc95e8db775\",\"port\":9,\"retries\":80}}]"
+audio.play_bitrate_non_metered_migrated=true
+app.player.volume=31529
