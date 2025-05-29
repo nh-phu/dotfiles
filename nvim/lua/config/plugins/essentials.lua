@@ -1,0 +1,39 @@
+return {
+  -- Auto pairs
+  { "windwp/nvim-autopairs", config = true },
+
+  -- Comment toggler
+  { "numToStr/Comment.nvim", config = true },
+
+  -- File tree (optional)
+  { "nvim-tree/nvim-tree.lua", config = true },
+  { "nvim-tree/nvim-web-devicons" },
+  {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd([[colorscheme tokyonight]])
+  end,
+  },
+  { "folke/which-key.nvim", lazy = true},
+  {
+  "dstein64/vim-startuptime",
+  cmd = "StartupTime",
+  init = function()
+    vim.g.startuptime_tries = 10
+  end,
+},
+{
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+  },
+  config = function()
+    -- Setup snippet & completion config here
+  end,
+},
+}
+
