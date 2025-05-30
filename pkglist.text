@@ -2,6 +2,7 @@ alsa-utils
 base
 base-devel
 bash-completion
+blender
 bluez
 bluez-deprecated-tools
 bluez-utils
@@ -53,12 +54,14 @@ nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+ntfs-3g
 nvidia
 nvidia-prime
 nvidia-settings
 nvidia-utils
 obs-studio
 obsidian
+octave
 openssh
 openssl-1.1
 os-prober
