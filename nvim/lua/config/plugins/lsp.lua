@@ -1,3 +1,4 @@
+
 return {
 
   -- LSP Setup (language servers)
@@ -54,4 +55,3 @@ return {
   end,
 },
 }
-

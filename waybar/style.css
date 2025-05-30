@@ -60,12 +60,12 @@
 
 #pulseaudio {
   color: #14b8a6;
-  margin-right: 7px;
+  margin-right: 10px;
 }
 
 #cpu {
   color: #0ea5e9;
-  margin-right: 4px;
+  margin-right: 1px;
 }
 
 #temperature {

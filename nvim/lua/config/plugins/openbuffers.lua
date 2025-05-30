@@ -6,7 +6,11 @@ return
   config = function()
     require("bufferline").setup({
       options = {
+        cycle = false,
+        warps = false,
         mode = "buffers",
+        numbers = "ordinal",
+        always_show_bufferline = true,
         separator_style = "slant",
         diagnostics = "nvim_lsp",
         show_buffer_close_icons = false,
@@ -15,6 +19,7 @@ return
           {
             filetype = "NvimTree",
             text = "File Explorer",
+            highlight = "Directory",
             text_align = "center",
             separator = true,
           },

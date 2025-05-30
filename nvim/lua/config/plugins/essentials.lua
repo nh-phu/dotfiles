@@ -8,7 +8,6 @@ return {
   -- File tree (optional)
 --  { "nvim-tree/nvim-tree.lua", config = true },
   { "nvim-tree/nvim-web-devicons" },
-  { "folke/which-key.nvim", lazy = true},
   {
   "dstein64/vim-startuptime",
   cmd = "StartupTime",
