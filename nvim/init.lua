@@ -1,6 +1,8 @@
 vim.g.mapleader = " "  -- set leader to space
 vim.g.maplocalleader = "\\"  -- local leader also space (optional)
 require("config.lazy")
+require("config.hl-yank")
+vim.opt.termguicolors = true -- enable true color support
 --set keymap for common actions
 --vim.api.nvim_set_keymap('n', '<leader>e', ':Snacks.explorer<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true })
@@ -39,4 +41,3 @@ vim.opt.expandtab = true -- spaces instead of tabs
 
 -- Enable clipboard integration
 vim.opt.clipboard = "unnamedplus"
-

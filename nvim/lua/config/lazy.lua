@@ -25,10 +25,18 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
 --	{ "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end},
-{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+{ "catppuccin/nvim", name = "catppuccin", priority = 1000,
+        config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        transparent_background = true,
+        term_colors = true,
+      })
+      vim.cmd.colorscheme("catppuccin")
+    end,
+},
     -- import your plugins
     { import = "config.plugins" },
-  },
 ui = {
   size = { width = 0.8, height = 0.8 },
   wrap = true,
@@ -94,5 +102,5 @@ ui = {
 --  install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
-})
+}})
 

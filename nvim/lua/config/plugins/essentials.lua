@@ -6,16 +6,8 @@ return {
   { "numToStr/Comment.nvim", config = true },
 
   -- File tree (optional)
-  { "nvim-tree/nvim-tree.lua", config = true },
+--  { "nvim-tree/nvim-tree.lua", config = true },
   { "nvim-tree/nvim-web-devicons" },
-  {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme tokyonight]])
-  end,
-  },
   { "folke/which-key.nvim", lazy = true},
   {
   "dstein64/vim-startuptime",

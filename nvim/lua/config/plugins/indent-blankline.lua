@@ -21,11 +21,6 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
-  keys = {
-            {"<leader>e",
-             function() require("snacks").explorer() end,
-             desc = "File Explorer"},
-        }
 },
     {
   "lukas-reineke/indent-blankline.nvim",
