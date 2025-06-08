@@ -1,44 +1,144 @@
 return {
-  -- other plugins ...
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                panel = {
+                    enabled = true,
+                    auto_refresh = true,
+                    keymap = {
+                        accept = "<C-f>",
+                        next = "<C-]>",
+                        prev = "<C-[>",
+                        dismiss = "<C-\\>",
+                    },
+                },
+                suggestion = {
+                    enabled = false, -- Disable inline suggestions to avoid conflicts with nvim-cmp
+                    auto_trigger = false,
+                },
+                filetypes = {
+                    ["*"] = true,
+                    c = true,
+                    cpp = true,
+                    python = true,
+                    lua = true,
+                },
+            })
+        end,
+    },
+    {
+        "zbirenbaum/copilot-cmp",
+        event = "InsertEnter",
+        dependencies = { "zbirenbaum/copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    },
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "main",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" },
+            { "nvim-lua/plenary.nvim" },
+        },
+        config = function()
+            require("CopilotChat").setup({
+                debug = false,
+                model = 'gpt-4',
+                temperature = 0.1,
+                question_header = '## User ',
+                answer_header = '## Copilot ',
+                error_header = '## Error ',
+                separator = ' ',
+                show_folds = true,
+                show_help = true,
+                auto_follow_cursor = true,
+                auto_insert_mode = false,
+                clear_chat_on_new_prompt = false,
+                context = 'buffers', -- Use 'buffers' for current files context
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",  -- load on command
-    event = "InsertEnter", -- or on InsertEnter to start automatically
-    config = function()
-      require("copilot").setup({
-        panel = {
-          enabled = true,
-          auto_refresh = true,
-          keymap = {
-            accept = "<CR>",
-            next = "<C-]>",
-            prev = "<C-[>",
-            dismiss = "<C-\\>",
-          },
-        },
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<C-f>",
-            accept_word = false,
-            accept_line = false,
-            next = "<C-]>",
-            prev = "<C-[>",
-            dismiss = "<C-\\>",
-          },
-        },
-        filetypes = {
-          -- disable for some filetypes if you want
-          ["*"] = true,
-          -- ["markdown"] = false,
-        },
-        -- optionally, you can add copilot_token here or use environment variables
-      })
-    end,
-  },
+                -- Custom prompts
+                prompts = {
+                    Explain = {
+                        prompt = "/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text.",
+                    },
+                    Review = {
+                        prompt = "/COPILOT_REVIEW Review the selected code.",
+                        callback = function(response, source)
+                            -- Custom callback if needed
+                        end,
+                    },
+                    Fix = {
+                        prompt =
+                        "/COPILOT_GENERATE There is a problem in this code. Rewrite the code to fix the problem.",
+                    },
+                    Optimize = {
+                        prompt = "/COPILOT_GENERATE Optimize the selected code to improve performance and readablilty.",
+                    },
+                    Docs = {
+                        prompt = "/COPILOT_GENERATE Please add documentation comment for the selection.",
+                    },
+                    Tests = {
+                        prompt = "/COPILOT_GENERATE Please generate tests for my code.",
+                    },
+                },
 
-  -- other plugins ...
+                -- Key mappings
+                mappings = {
+                    complete = {
+                        detail = "Use @<Tab> or /<Tab> for options.",
+                        insert = "<Tab>",
+                    },
+                    close = {
+                        normal = "q",
+                        insert = "<C-c>"
+                    },
+                    reset = {
+                        normal = "<C-r>",
+                        insert = "<C-r>"
+                    },
+                    submit_prompt = {
+                        normal = "<CR>",
+                        insert = "<C-s>"
+                    },
+                    accept_diff = {
+                        normal = "<C-y>",
+                        insert = "<C-y>"
+                    },
+                    yank_diff = {
+                        normal = "gy",
+                        register = '"',
+                    },
+                    show_diff = {
+                        normal = "gd"
+                    },
+                    show_info = {
+                        normal = "gi",
+                    },
+                    show_context = {
+                        normal = "gc",
+                    },
+                },
+            })
+
+            -- Key mappings for CopilotChat
+            vim.keymap.set("n", "<leader>cc", ":CopilotChat ", { desc = "CopilotChat - Quick chat" })
+            vim.keymap.set("n", "<leader>ccq", function()
+                local input = vim.fn.input("Quick Chat: ")
+                if input ~= "" then
+                    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+                end
+            end, { desc = "CopilotChat - Quick question" })
+            vim.keymap.set("v", "<leader>cc", ":CopilotChatVisual ", { desc = "CopilotChat - Visual selection" })
+            vim.keymap.set("n", "<leader>cce", "<cmd>CopilotChatExplain<cr>", { desc = "CopilotChat - Explain code" })
+            vim.keymap.set("n", "<leader>ccr", "<cmd>CopilotChatReview<cr>", { desc = "CopilotChat - Review code" })
+            vim.keymap.set("n", "<leader>ccf", "<cmd>CopilotChatFix<cr>", { desc = "CopilotChat - Fix code" })
+            vim.keymap.set("n", "<leader>cco", "<cmd>CopilotChatOptimize<cr>", { desc = "CopilotChat - Optimize code" })
+            vim.keymap.set("n", "<leader>ccd", "<cmd>CopilotChatDocs<cr>", { desc = "CopilotChat - Add documentation" })
+            vim.keymap.set("n", "<leader>cct", "<cmd>CopilotChatTests<cr>", { desc = "CopilotChat - Generate tests" })
+        end,
+    }
 }
-
