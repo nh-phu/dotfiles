@@ -25,6 +25,10 @@ return {
                     cpp = true,
                     python = true,
                     lua = true,
+                    javascript = true,
+                    typescript = true,
+                    rust = true,
+                    go = true,
                 },
             })
         end,
@@ -66,26 +70,33 @@ return {
                         prompt = "/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text.",
                     },
                     Review = {
-                        prompt = "/COPILOT_REVIEW Review the selected code.",
-                        callback = function(response, source)
-                            -- Custom callback if needed
-                        end,
+                        prompt = "/COPILOT_REVIEW Review the selected code and provide constructive feedback.",
                     },
                     Fix = {
                         prompt =
                         "/COPILOT_GENERATE There is a problem in this code. Rewrite the code to fix the problem.",
                     },
                     Optimize = {
-                        prompt = "/COPILOT_GENERATE Optimize the selected code to improve performance and readablilty.",
+                        prompt = "/COPILOT_GENERATE Optimize the selected code to improve performance and readability.",
                     },
                     Docs = {
-                        prompt = "/COPILOT_GENERATE Please add documentation comment for the selection.",
+                        prompt = "/COPILOT_GENERATE Please add documentation comments for the selection.",
                     },
                     Tests = {
-                        prompt = "/COPILOT_GENERATE Please generate tests for my code.",
+                        prompt = "/COPILOT_GENERATE Please generate comprehensive tests for my code.",
+                    },
+                    -- New useful prompts
+                    BetterNamings = {
+                        prompt = "/COPILOT_GENERATE Suggest better variable and function names for the selected code.",
+                    },
+                    Refactor = {
+                        prompt =
+                        "/COPILOT_GENERATE Refactor this code to make it more maintainable and follow best practices.",
+                    },
+                    Security = {
+                        prompt = "/COPILOT_REVIEW Review this code for potential security vulnerabilities.",
                     },
                 },
-
                 -- Key mappings
                 mappings = {
                     complete = {
@@ -133,12 +144,24 @@ return {
                 end
             end, { desc = "CopilotChat - Quick question" })
             vim.keymap.set("v", "<leader>cc", ":CopilotChatVisual ", { desc = "CopilotChat - Visual selection" })
+
+            -- Existing commands
             vim.keymap.set("n", "<leader>cce", "<cmd>CopilotChatExplain<cr>", { desc = "CopilotChat - Explain code" })
             vim.keymap.set("n", "<leader>ccr", "<cmd>CopilotChatReview<cr>", { desc = "CopilotChat - Review code" })
             vim.keymap.set("n", "<leader>ccf", "<cmd>CopilotChatFix<cr>", { desc = "CopilotChat - Fix code" })
             vim.keymap.set("n", "<leader>cco", "<cmd>CopilotChatOptimize<cr>", { desc = "CopilotChat - Optimize code" })
             vim.keymap.set("n", "<leader>ccd", "<cmd>CopilotChatDocs<cr>", { desc = "CopilotChat - Add documentation" })
             vim.keymap.set("n", "<leader>cct", "<cmd>CopilotChatTests<cr>", { desc = "CopilotChat - Generate tests" })
+
+            -- New commands
+            vim.keymap.set("n", "<leader>ccn", "<cmd>CopilotChatBetterNamings<cr>",
+                { desc = "CopilotChat - Better naming" })
+            vim.keymap.set("n", "<leader>ccR", "<cmd>CopilotChatRefactor<cr>", { desc = "CopilotChat - Refactor code" })
+            vim.keymap.set("n", "<leader>ccs", "<cmd>CopilotChatSecurity<cr>", { desc = "CopilotChat - Security review" })
+
+            -- Toggle and utility
+            vim.keymap.set("n", "<leader>cct", ":CopilotChatToggle<cr>", { desc = "CopilotChat - Toggle window" })
+            vim.keymap.set("n", "<leader>ccx", ":CopilotChatReset<cr>", { desc = "CopilotChat - Reset conversation" })
         end,
     }
 }
