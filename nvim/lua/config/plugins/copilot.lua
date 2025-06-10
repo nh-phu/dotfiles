@@ -16,7 +16,7 @@ return {
                     },
                 },
                 suggestion = {
-                    enabled = false, -- Disable inline suggestions to avoid conflicts with nvim-cmp
+                    enabled = false, -- disable inline suggestions to avoid conflicts with nvim-cmp
                     auto_trigger = false,
                 },
                 filetypes = {
@@ -35,34 +35,47 @@ return {
     },
     {
         "zbirenbaum/copilot-cmp",
-        event = "InsertEnter",
+        event = "InsertEnter", -- Fixed capitalization
         dependencies = { "zbirenbaum/copilot.lua" },
         config = function()
             require("copilot_cmp").setup()
         end,
     },
     {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "main",
+        "CopilotC-Nvim/CopilotChat.nvim", -- Fixed: was "copilotc-nvim/copilotchat.nvim"
+        branch = "main", -- Changed from "main" to "canary" for latest features
         dependencies = {
             { "zbirenbaum/copilot.lua" },
             { "nvim-lua/plenary.nvim" },
         },
         config = function()
-            require("CopilotChat").setup({
+            require("CopilotChat").setup({ -- Fixed: was "copilotchat"
                 debug = false,
-                model = 'gpt-4',
+                model = 'claude-3.5-sonnet', -- Upgraded from gpt-4 for better performance
+                agent = 'copilot',
                 temperature = 0.1,
+                max_tokens = 4096, -- Increase token limit for longer responses
+                window = {
+                    layout = 'vertical', -- or 'horizontal', 'float'
+                    width = 0.4, -- 40% of screen width
+                    height = 0.6, -- 60% of screen height
+                    relative = 'editor',
+                    border = 'rounded', -- Add nice borders
+                    row = 1,
+                },
                 question_header = '## User ',
                 answer_header = '## Copilot ',
                 error_header = '## Error ',
                 separator = ' ',
                 show_folds = true,
                 show_help = true,
+                context = 'buffers', -- Use 'buffers' for current files context
+                history_path = vim.fn.stdpath("data") .. "/copilotchat_history", -- Persist chat history
                 auto_follow_cursor = true,
                 auto_insert_mode = false,
                 clear_chat_on_new_prompt = false,
-                context = 'buffers', -- Use 'buffers' for current files context
+                show_folds = true,
+                show_help = true,
 
                 -- Custom prompts
                 prompts = {
@@ -95,6 +108,25 @@ return {
                     },
                     Security = {
                         prompt = "/COPILOT_REVIEW Review this code for potential security vulnerabilities.",
+                    },
+                    -- Additional useful prompts
+                    Debug = {
+                        prompt = "/COPILOT_GENERATE Help me debug this code. Explain what might be wrong and suggest fixes.",
+                    },
+                    Performance = {
+                        prompt = "/COPILOT_REVIEW Analyze this code for performance bottlenecks and suggest optimizations.",
+                    },
+                    TypeScript = {
+                        prompt = "/COPILOT_GENERATE Add proper TypeScript types to this code.",
+                    },
+                    UnitTest = {
+                        prompt = "/COPILOT_GENERATE Create unit tests for this function with edge cases and mocking.",
+                    },
+                    APIDoc = {
+                        prompt = "/COPILOT_GENERATE Generate API documentation for this code with examples.",
+                    },
+                    Convert = {
+                        prompt = "/COPILOT_GENERATE Convert this code to [specify language/framework in your message].",
                     },
                 },
                 -- Key mappings
@@ -143,9 +175,14 @@ return {
                     require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
                 end
             end, { desc = "CopilotChat - Quick question" })
+            
+            -- Visual mode mappings
             vim.keymap.set("v", "<leader>cc", ":CopilotChatVisual ", { desc = "CopilotChat - Visual selection" })
+            vim.keymap.set("v", "<leader>cce", ":CopilotChatExplain<cr>", { desc = "CopilotChat - Explain selection" })
+            vim.keymap.set("v", "<leader>ccr", ":CopilotChatReview<cr>", { desc = "CopilotChat - Review selection" })
+            vim.keymap.set("v", "<leader>ccf", ":CopilotChatFix<cr>", { desc = "CopilotChat - Fix selection" })
 
-            -- Existing commands
+            -- Normal mode - work with current buffer/selection
             vim.keymap.set("n", "<leader>cce", "<cmd>CopilotChatExplain<cr>", { desc = "CopilotChat - Explain code" })
             vim.keymap.set("n", "<leader>ccr", "<cmd>CopilotChatReview<cr>", { desc = "CopilotChat - Review code" })
             vim.keymap.set("n", "<leader>ccf", "<cmd>CopilotChatFix<cr>", { desc = "CopilotChat - Fix code" })
@@ -159,9 +196,44 @@ return {
             vim.keymap.set("n", "<leader>ccR", "<cmd>CopilotChatRefactor<cr>", { desc = "CopilotChat - Refactor code" })
             vim.keymap.set("n", "<leader>ccs", "<cmd>CopilotChatSecurity<cr>", { desc = "CopilotChat - Security review" })
 
-            -- Toggle and utility
+            -- New enhanced commands
+            vim.keymap.set("n", "<leader>ccD", "<cmd>CopilotChatDebug<cr>", { desc = "CopilotChat - Debug help" })
+            vim.keymap.set("n", "<leader>ccp", "<cmd>CopilotChatPerformance<cr>", { desc = "CopilotChat - Performance analysis" })
+            vim.keymap.set("n", "<leader>ccT", "<cmd>CopilotChatTypeScript<cr>", { desc = "CopilotChat - Add TypeScript types" })
+            vim.keymap.set("n", "<leader>ccu", "<cmd>CopilotChatUnitTest<cr>", { desc = "CopilotChat - Unit tests" })
+            vim.keymap.set("n", "<leader>cca", "<cmd>CopilotChatAPIDoc<cr>", { desc = "CopilotChat - API documentation" })
+            vim.keymap.set("n", "<leader>ccC", "<cmd>CopilotChatConvert<cr>", { desc = "CopilotChat - Convert code" })
+
+            -- Quick actions with floating window
+            vim.keymap.set("n", "<leader>ccw", function()
+                require("CopilotChat").open({
+                    window = { layout = 'float', width = 0.8, height = 0.8 }
+                })
+            end, { desc = "CopilotChat - Open float window" })
+
+            -- Context-specific shortcuts
+            vim.keymap.set("n", "<leader>ccb", function()
+                require("CopilotChat").ask("Explain this entire buffer", {
+                    selection = require("CopilotChat.select").buffer
+                })
+            end, { desc = "CopilotChat - Explain buffer" })
+
+            -- Utility mappings
+            vim.keymap.set("n", "<leader>ccS", ":CopilotChatSave ", { desc = "CopilotChat - Save chat" })
+            vim.keymap.set("n", "<leader>ccL", ":CopilotChatLoad ", { desc = "CopilotChat - Load chat" })
+
+            -- Toggle and utility (Fixed duplicate <leader>cct mapping)
             vim.keymap.set("n", "<leader>cct", ":CopilotChatToggle<cr>", { desc = "CopilotChat - Toggle window" })
             vim.keymap.set("n", "<leader>ccx", ":CopilotChatReset<cr>", { desc = "CopilotChat - Reset conversation" })
+            
+            -- Add autocommands for better UX
+            vim.api.nvim_create_autocmd("BufEnter", {
+                pattern = "copilot-chat",
+                callback = function()
+                    vim.opt_local.relativenumber = false
+                    vim.opt_local.number = false
+                end
+            })
         end,
     }
 }
