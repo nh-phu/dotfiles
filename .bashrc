@@ -2,11 +2,19 @@
 # ~/.bashrc
 #
 
+export EDITOR=nvim
+export GTK_IM_MODULE=default
+export QT_IM_MODULE=default
+export XMODIFIERS=@im=default
+# ibus-daemon -dr
+export INPUT_METHOD=default
+
 # Exit early if not running interactively
 [[ $- != *i* ]] && return
 
 # === PATH ===
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # === BASH COMPLETION ===
 [[ -f /usr/share/bash-completion/bash_completion ]] && \
@@ -30,8 +38,10 @@ ble-face -s command_directory         underline=false
 ble-face -s filename_directory         underline=false
 
 # Minimal .blerc
-bleopt highlight_timeout_sync=100
+bleopt highlight_timeout_sync=150
 bleopt highlight_timeout_async=2000
+bleopt complete_auto_delay=150
+
 # === FZF ===
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
@@ -69,3 +79,4 @@ pj() {
   nvim .
 }
 
+export PATH="$HOME/.cargo/bin:$PATH"
