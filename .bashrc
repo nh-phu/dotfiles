@@ -1,12 +1,12 @@
-#
 # ~/.bashrc
-#
 
 export EDITOR=nvim
+export VISUAL=$EDITOR
+
+# input method
 export GTK_IM_MODULE=default
 export QT_IM_MODULE=default
 export XMODIFIERS=@im=default
-# ibus-daemon -dr
 export INPUT_METHOD=default
 
 # Exit early if not running interactively
@@ -52,16 +52,14 @@ PS1='[\u@\h \W]\$ '
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias sl='sl | lolcat'
 alias neovim='nvim'
 alias spotify-player='spotify_player'
-alias sl='sl | lolcat'
-
-# === GIT SHORTCUTS ===
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gl='git log --oneline --graph'
+HISTSIZE=10000                    # Commands to remember in memory
+HISTFILESIZE=20000               # Commands to save in history file
+HISTCONTROL=ignoreboth:erasedups # Ignore duplicates and commands starting with space
+shopt -s histappend              # Append to history instead of overwriting
+alias rm='rm -i'
 
 # === FZF COMMAND HISTORY ===
 bind '"\er": "$(history | fzf | cut -c 8-)\n"'
@@ -79,4 +77,9 @@ pj() {
   nvim .
 }
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# config file
+config() {
+    cd ~/.config/"$(ls ~/.config | fzf)" 2>/dev/null || return
+    nvim .
+}
+

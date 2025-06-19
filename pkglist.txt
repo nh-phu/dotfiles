@@ -1,117 +1,174 @@
-alsa-utils
-base
-base-devel
-bash-completion
-blender
-bluez
-bluez-deprecated-tools
-bluez-utils
-btop
-catppuccin-gtk-theme-mocha
-cava
-chafa
-chntpw
-cliphist
-cmatrix
-cowsay
-discord
-efibootmgr
-fastfetch
-fd
-ffmpegthumbnailer
-firefox
-flatpak
-fortune-mod
-fzf
-git
-github-cli
-grim
-grub
-gtk-engine-murrine
-gvfs
-highlight
-htop
-hyprland
-hyprpaper
-hyprpicker
-imv
-inetutils
-intel-ucode
-kitty
-libreoffice-fresh
-linux
-linux-firmware
-lolcat
-lua-language-server
-lxappearance
-man-db
-man-pages
-mpd
-ncmpcpp
-neovim
-networkmanager
-nodejs
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-ntfs-3g
-nvidia
-nvidia-prime
-nvidia-settings
-nvidia-utils
-obs-studio
-obsidian
-octave
-openssh
-openssl-1.1
-os-prober
-papirus-icon-theme
-pavucontrol
-poppler-glib
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
-ranger
-ripgrep
-rustup
-sl
-slurp
-sof-firmware
-spotify
-spotify-player
-spotifyd
-steam
-sudo
-swappy
-thunar
-thunar-volman
-tmux
-ttf-all-the-icons
-ttf-dejavu
-ttf-fira-code
-ttf-firacode-nerd
-ttf-font-awesome
-ttf-hack
-ttf-hack-nerd
-ttf-jetbrains-mono-nerd
-ttf-liberation
-tumbler
-ueberzug
-ufw
-unzip
-viu
-vlc
-waybar
-wev
-wget
-wireplumber
-wl-clipboard
-wlogout
-wofi
-xdg-desktop-portal-hyprland
-xdg-utils
-yay
-yay-debug
-zathura
-zathura-pdf-mupdf
-zip
+alsa-utils 1.2.14-1
+appmenu-gtk-module 25.04-1
+aspell 0.60.8.1-2
+base 3-2
+base-devel 1-2
+bash-completion 2.16.0-1
+bat 0.25.0-4
+blender 17:4.4.3-4
+bluez 5.83-1
+bluez-deprecated-tools 5.83-1
+bluez-utils 5.83-1
+brightnessctl 0.5.1-3
+btop 1.4.3-3
+capitaine-cursors 4-3
+catppuccin-gtk-theme-mocha 1.0.3-1
+cava 0.10.4-3
+chafa 1.16.0-1
+chntpw 140201-5
+cliphist 1:0.6.1-1
+cmatrix 2.0-3
+cowsay 3.8.4-1
+discord 1:0.0.98-1
+efibootmgr 18-3
+evtest 1.35-2
+fastfetch 2.45.0-1
+fcitx5 5.1.13-1
+fcitx5-configtool 5.1.9-1
+fcitx5-gtk 5.1.4-1
+fcitx5-qt 5.1.10-1
+fcitx5-unikey 5.1.7-1
+fd 10.2.0-1
+ffmpegthumbnailer 2.2.3-3
+fightcade2 2.1.38-2
+firefox 139.0.4-1
+flatpak 1:1.16.1-1
+fortune-mod 3.22.0-1
+fprintd 1.94.5-1
+fzf 0.62.0-1
+gimp 3.0.4-3
+git 2.50.0-1
+github-cli 2.74.2-1
+grim 1.4.1-3
+grub 2:2.12.r292.g73d1c959-1
+gtk-engine-murrine 0.98.2-4
+gvfs 1.57.2-4
+gvfs-mtp 1.57.2-4
+gvim 9.1.1431-1
+highlight 4.16-1
+htop 3.4.1-1
+hyprland 0.49.0-1
+hyprpaper 0.7.5-1
+hyprpicker 0.4.5-2
+imagemagick 7.1.1.47-2
+imv 4.5.0-5
+inetutils 2.6-1
+intel-ucode 20250512-1
+kdeconnect 25.04.2-1
+kitty 0.42.1-1
+kotatsu-dl-git 0.7.r2.g23e8fa5-1
+lazygit 0.52.0-1
+libreoffice-fresh 25.2.4-2
+librespot 0.6.0-3
+linux 6.15.2.arch1-1
+linux-firmware 20250508.788aadc8-2
+lolcat 100.0.1-5
+lua-language-server 3.14.0-1
+lua51 5.1.5-13
+lxappearance 0.6.4-1
+mako 1.10.0-1
+man-db 2.13.1-1
+man-pages 6.14-1
+mesa-utils 9.0.0-7
+mpd 0.24.4-2
+mpv 1:0.40.0-3
+ncmpcpp 0.10.1-4
+neovim 0.11.2-3
+networkmanager 1.52.0-1
+nodejs 24.2.0-1
+notion-app-electron 4.11.1-1
+noto-fonts 1:2025.06.01-1
+noto-fonts-cjk 20240730-1
+noto-fonts-emoji 1:2.047-1
+nss-mdns 0.15.1-2
+ntfs-3g 2022.10.3-2
+nvidia 575.57.08-5
+nvidia-prime 1.0-5
+nvidia-settings 575.57.08-1
+nvidia-utils 575.57.08-3
+nvtop 3.2.0-1
+nwg-look 1.0.5-1
+obs-studio 31.0.3-2
+obsidian 1.8.10-1
+octave 10.2.0-1
+openssh 10.0p1-3
+openssl-1.1 1.1.1.w-2
+os-prober 1.83-1
+papirus-icon-theme 20250501-1
+pavucontrol 1:6.1-1
+pfetch 1.9.1-1
+pipes.sh 1.3.0-1
+pkgfile 24-1
+poppler-glib 25.06.0-1
+powertop 2.15-2
+pulseaudio 17.0+r43+g3e2bb8a1e-1
+pulseaudio-alsa 1:1.2.12-4
+pulseaudio-bluetooth 17.0+r43+g3e2bb8a1e-1
+python-pip 25.1.1-1
+python-pynvim 0.5.2-1
+qbittorrent 5.1.0-1
+qemu-user 10.0.0-7
+qutebrowser 3.5.1-1
+ranger 1.9.4-4
+reflector 2023-3
+ripgrep 14.1.1-1
+riscv64-linux-gnu-binutils 2.43.1-1
+riscv64-linux-gnu-gcc 14.2.0-1
+rustup 1.28.2-2
+sl 5.05-5
+slurp 1.5.0-1
+sof-firmware 2025.05-1
+spotify 1:1.2.63.394-1
+spotify-player-full 0.20.5-1
+spotifyd 0.4.1-1
+sshfs 3.7.3-3
+steam 1.0.0.82-2
+steam-native-runtime 1.0.0.75-4
+sudo 1.9.16.p2-2
+swappy 1.5.1-2
+tauri-cli 2.5.0-1
+thermald 2.5.9-3
+thunar 4.20.3-1
+thunar-volman 4.20.0-2
+tlp 1.8.0-1
+tlp-rdw 1.8.0-1
+tmux 3.5_a-1
+trash-cli 0.24.5.26-2
+ttf-all-the-icons 5.0.0-1
+ttf-dejavu 2.37+18+g9b5d1b2f-7
+ttf-fira-code 6.2-2
+ttf-firacode-nerd 3.4.0-1
+ttf-font-awesome 6.7.2-1
+ttf-hack 3.003-7
+ttf-hack-nerd 3.4.0-1
+ttf-jetbrains-mono-nerd 3.4.0-1
+ttf-liberation 2.1.5-2
+tumbler 4.20.0-3
+ueberzug 18.3.1-4
+ufw 0.36.2-5
+unzip 6.0-22
+vencord 1.12.3-1
+vimix-cursors 2020_02_24-6
+viu 1.5.1-1
+vlc 3.0.21-24
+waybar 0.12.0-1
+wev 1.0.0-13
+wget 1.25.0-2
+wireplumber 0.5.10-1
+wl-clipboard 1:2.2.1-2
+wlogout 1.2.2-0
+wofi 1.4.1-1
+xcursor-comix 0.10.1-1
+xcursor-themes 1.0.7-2
+xcursor-vanilla-dmz 0.4.5.2-1
+xcursor-vanilla-dmz-aa 0.4.5.2-1
+xdg-desktop-portal-hyprland 1.3.9-9
+xdg-utils 1.2.1-1
+yay 12.5.0-1
+yay-debug 12.5.0-1
+yt-dlp 2025.06.09-1
+zathura 0.5.11-1
+zathura-pdf-mupdf 0.4.4-17
+zen-browser-bin 1.13.2b-2
+zip 3.0-11
+zoom 6.5.0-1

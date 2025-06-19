@@ -5,6 +5,8 @@ current_layout=$(hyprctl getoption general:layout | grep -o 'dwindle\|master')
 
 if [ "$current_layout" = "dwindle" ]; then
     hyprctl keyword general:layout master
+    notify-send "Layout" "Switched to Master" --category="layout" -t 1000 -u low
 else
     hyprctl keyword general:layout dwindle
+    notify-send "Layout" "Switched to Dwindle" --category="layout" -t 1000 -u low
 fi
