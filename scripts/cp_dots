@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+for i in "$HOME/dotfiles/"*/; do
+    dirname=$(basename "$i")
+    cp -r "$HOME/.config/$dirname/"* "$i/" 2>/dev/null || true
+done
+
+sed -i 's/client_id = ".*"/client_id = "" # go to https:\/\/developer.spotify.com\/dashboard/' "$HOME/dotfiles/spotify-player/app.toml"
+
+pacman -Qe > "$HOME/dotfiles/pkglist.txt"
+yay -Qm > "$HOME/dotfiles/yaypkg.txt"
+
+cp "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
+cp "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
+cp "$HOME/.local/bin/"* "$HOME/dotfiles/scripts/"

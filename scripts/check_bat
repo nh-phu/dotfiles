@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+DEVICE=$(upower -e | grep battery)
+LAST_LEVEL=""
+
+while true; do
+    PERCENT=$(upower -i "$DEVICE" | awk '/percentage:/ {print $2}' | sed 's/%//')
+
+    # Remove decimal if any
+    PERCENT=${PERCENT%.*}
+
+    if [[ "$PERCENT" -le 20 && "$PERCENT" -gt 10 && "$LAST_LEVEL" != "low" ]]; then
+        notify-send -u normal -h int:value:"$PERCENT" "🔋 Battery Low" "Battery at ${PERCENT}%"
+        LAST_LEVEL="low"
+    elif [[ "$PERCENT" -le 10 && "$PERCENT" -gt 8 && "$LAST_LEVEL" != "critical" ]]; then
+        notify-send -u critical -h int:value:"$PERCENT" "⚠️ Battery Critical" "Battery at ${PERCENT}%"
+        LAST_LEVEL="critical"
+    elif [[ "$PERCENT" -gt 20 ]]; then
+        LAST_LEVEL=""
+    fi
+
+    sleep 60
+done

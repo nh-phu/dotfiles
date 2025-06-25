@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo "=== Current GPU Status ==="
+echo "Active renderer: $(glxinfo | grep "OpenGL renderer" | cut -d: -f2)"
+echo ""
+echo "=== NVIDIA Status ==="
+nvidia-smi --query-gpu=name,power.draw,temperature.gpu,utilization.gpu --format=csv,noheader,nounits
+echo ""
+echo "=== Power State ==="
+echo "NVIDIA P-State: $(nvidia-smi --query-gpu=pstate --format=csv,noheader,nounits)"
