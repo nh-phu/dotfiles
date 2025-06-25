@@ -142,6 +142,7 @@ sudo 1.9.16.p2-2
 supertuxkart 1.4-6
 swappy 1.5.1-2
 tauri-cli 2.6.0-1
+telegram-desktop 5.15.4-2
 thermald 2.5.9-3
 thunar 4.20.3-1
 thunar-volman 4.20.0-2
