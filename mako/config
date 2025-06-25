@@ -4,7 +4,7 @@ layer=overlay
 background-color=#2d3748
 text-color=#ffffff
 width=300
-height=120
+height=130
 border-size=2
 border-color=#4a5568
 border-radius=10
@@ -14,7 +14,7 @@ default-timeout=5000
 ignore-timeout=1
 font=monospace 11
 anchor=bottom-right
-outer-margin=9,0
+outer-margin=20, 0
 
 [urgency=low]
 border-color=#38a169

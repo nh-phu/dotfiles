@@ -8,6 +8,7 @@ return {
         incremental_selection = {enable = true},
         indent = { enable = true },
         ensure_installed = {
+          "asm",
           "bash",
           "c",
           "cpp",

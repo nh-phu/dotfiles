@@ -15,16 +15,5 @@ return {
     vim.g.startuptime_tries = 10
   end,
 },
-{
-  "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-  },
-  config = function()
-    -- Setup snippet & completion config here
-  end,
-},
 }
 

@@ -1,0 +1,89 @@
+[manager]
+show_hidden = false
+show_symlink = true
+scrolloff = 5
+
+[preview]
+wrap = "no"
+max_width = 600
+max_height = 900
+
+[opener]
+# Text files
+edit = [
+  { run = 'nvim "$@"', desc = "Edit in Neovim", block = true, for = "unix" }
+]
+
+# Office documents
+office = [
+  { run = 'libreoffice "$1"', desc = "LibreOffice", orphan = true }
+]
+
+# PDFs
+pdf = [
+  { run = 'zathura "$1"', desc = "Zathura", orphan = true }
+]
+
+# Images
+image = [
+  { run = 'imv "$@"', desc = "View in imv", orphan = true }
+]
+
+# Videos
+video = [
+  { run = 'mpv "$@"', desc = "Play in mpv", orphan = true }
+]
+
+# Audio
+audio = [
+  { run = 'mpv "$@"', desc = "Play in mpv", orphan = true }
+]
+
+# Web browsers
+browser = [
+  { run = 'firefox "$@"', desc = "Firefox", orphan = true }
+]
+
+# Archives
+archive = [
+  { run = 'file-roller "$1"', desc = "Extract with file-roller", orphan = true }
+]
+
+[open]
+rules = [
+  { name = "*/", use = "edit" },
+  
+  # Text files
+  { mime = "text/*", use = "edit" },
+  { mime = "application/json", use = "edit" },
+  { mime = "application/javascript", use = "edit" },
+  { mime = "application/x-shellscript", use = "edit" },
+  
+  # Office documents
+  { mime = "application/vnd.openxmlformats-officedocument.*", use = "office" },
+  { mime = "application/vnd.oasis.opendocument.*", use = "office" },
+  { mime = "application/msword", use = "office" },
+  { mime = "application/vnd.ms-*", use = "office" },
+  
+  # PDFs
+  { mime = "application/pdf", use = "pdf" },
+  
+  # Images
+  { mime = "image/*", use = "image" },
+  
+  # Videos
+  { mime = "video/*", use = "video" },
+  
+  # Audio
+  { mime = "audio/*", use = "audio" },
+  
+  # Web
+  { mime = "text/html", use = "browser" },
+  
+  # Archives
+  { mime = "application/zip", use = "archive" },
+  { mime = "application/x-tar", use = "archive" },
+  { mime = "application/x-bzip*", use = "archive" },
+  { mime = "application/x-7z-compressed", use = "archive" },
+  { mime = "application/x-rar", use = "archive" },
+]

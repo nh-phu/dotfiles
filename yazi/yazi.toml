@@ -1,0 +1,137 @@
+[mgr]
+ratio = [1, 4, 3]
+sort_by = "natural"
+show_hidden = false
+show_symlink = true
+scrolloff = 4
+sort_sensitive = false
+sort_dir_first = true
+sort_reverse = false
+linemode = "size"
+
+[preview]
+wrap = "no"
+max_width = 600
+max_height = 900
+image_filter = "triangle"
+image_quality = 75
+sixel_fraction = 15
+
+[opener]
+# Text files
+edit = [
+  { run = 'nvim "$@"', desc = "Edit with Neovim", block = true, for = "unix" },
+  { run = 'gvim "$@"', desc = "Edit with Gvim", block = true, for = "unix" },
+]
+    
+folder = [
+  { run = 'thunar "$@"', desc = "Open with thunar", orphan = true, block = true, for = "unix" },
+  { run = 'nvim "$@"', desc = "Edit with Neovim", orphan = true, for = "unix" },
+]
+
+document = [
+    { run = 'libreoffice "$@"', orphan = true, desc = "Edit with LibreOffice" },
+    { run = 'zathura "$@"', orphan = true, desc = "View with Zathura" },
+    { run = 'foliate "$@"', orphan = true, desc = "Read with Foliate" },
+]
+
+# ebooks
+ebook = [
+    { run = 'foliate "$@"', orphan = true, desc = "Read with Foliate" },
+    { run = 'calibre "$@"', orphan = true, desc = "Read with Calibre" },
+]
+
+ # PDFs
+ pdf = [
+   { run = 'zathura "$@"', desc = "Zathura", orphan = true ,for = "unix"},
+   { run = 'firefox "$@"', desc = "Firefox", orphan = true ,for = "unix"},
+   { run = 'foliate "$@"', desc = "Foliate", orphan = true ,for = "unix"},
+]
+# Images
+image = [
+  { run = 'imv "$@"', desc = "View in imv", orphan = true ,for = "unix"},
+  { run = 'gimp "$@"', desc = "Edit with gimp", orphan = true ,for = "unix"},
+]
+
+# Videos
+video = [
+  { run = 'mpv "$@"', desc = "Play with mpv", orphan = true , for = "unix"},
+  { run = 'vlc "$@"', desc = "Play with vlc", orphan = true , for = "unix"},
+]
+
+# Audio
+audio = [
+  { run = 'mpv "$@"', desc = "Play with mpv", orphan = true },
+  { run = 'vlc "$@"', desc = "Play with vlc", orphan = true },
+]
+
+# Web browsers
+browser = [
+  { run = 'firefox "$@"', desc = "Firefox", orphan = true },
+]
+
+torrent = [
+  { run = 'qbittorrent "$@"', desc = "Qbittorrent", orphan = true , block = true},
+]
+
+fallback = [
+    { run = 'xdg-open "$@"', orphan = true, desc = "Open with default app" },
+]
+
+# Archives
+archive = [
+  { run = 'file-roller "$1"', desc = "Extract with file-roller", orphan = true },
+]
+
+[open]
+rules = [
+  { name = "*/", use = "folder" },
+  
+  # Text files
+  { mime = "text/*", use = "edit" },
+  { mime = "*/xml", use = "edit" },
+  { mime = "application/json", use = "edit" },
+  { mime = "application/javascript", use = "edit" },
+  { mime = "application/x-shellscript", use = "edit" },
+  
+  # eBooks
+  { mime = "application/epub*", use = "ebook" },
+  { mime = "application/x-mobipocket-ebook", use = "ebook" },
+  { mime = "application/vnd.amazon.ebook", use = "ebook" },
+
+  # Documents
+  { mime = "application/pdf", use = "pdf" },
+  { mime = "application/vnd.oasis.opendocument.*", use = "document" },
+  { mime = "application/vnd.openxmlformats-officedocument.*", use = "document" },
+  { mime = "application/msword", use = "document" },
+  { mime = "application/vnd.ms-excel", use = "document" },
+  { mime = "application/vnd.ms-powerpoint", use = "document" },
+  
+  # PDFs
+  { mime = "application/pdf", use = "pdf" },
+  
+  # Images
+  { mime = "image/*", use = "image" },
+  
+  # Videos
+  { mime = "video/*", use = "video" },
+  
+  # Audio
+  { mime = "audio/*", use = "audio" },
+  
+  # Web
+  { mime = "text/html", use = "browser" },
+  
+  # Archives
+  { mime = "application/zip", use = "archive" },
+  { mime = "application/x-tar", use = "archive" },
+  { mime = "application/x-bzip*", use = "archive" },
+  { mime = "application/x-7z-compressed", use = "archive" },
+  { mime = "application/x-rar", use = "archive" },
+
+  #torrent
+  { mime = "application/bittorrent", use = "torrent" },
+
+  # Fallback 
+{ mime = "*", use = "fallback"},
+]

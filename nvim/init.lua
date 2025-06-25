@@ -1,6 +1,6 @@
 vim.g.mapleader = " "  -- set leader to space
 vim.g.maplocalleader = "\\"  -- local leader also space (optional)
-vim.o.updatetime = default
+vim.o.updatetime = 300  -- reduce update time to 300ms
 require("config.lazy")
 require("config.hl-yank")
 vim.opt.termguicolors = true -- enable true color support
@@ -40,6 +40,24 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- spaces instead of tabs
 
+-- File type specific indentation
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"lua", "javascript", "typescript", "json", "yaml", "html", "css"},
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+    end
+})
+
+-- Keep 4 spaces for C, C++, and other languages
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"c", "cpp", "java", "python", "bash", "sh"},
+    callback = function()
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.tabstop = 4
+    end
+})
+
 -- Enable clipboard integration
 
 
@@ -54,4 +72,4 @@ vim.keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>', { silent = true })
 vim.keymap.set('n', '<S-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
 vim.opt.wrap = false
-vim.opt.scrolloff = 5 
+vim.opt.scrolloff = 5

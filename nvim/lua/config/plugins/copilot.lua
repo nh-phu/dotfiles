@@ -69,7 +69,6 @@ return {
                 separator = ' ',
                 show_folds = true,
                 show_help = true,
-                context = 'buffers', -- Use 'buffers' for current files context
                 history_path = vim.fn.stdpath("data") .. "/copilotchat_history", -- Persist chat history
                 auto_follow_cursor = true,
                 auto_insert_mode = false,

@@ -26,6 +26,7 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufRead",
   opts = function()
+    local Snacks = require("snacks")
     Snacks.toggle({
       name = "Indention Guides",
       get = function()
@@ -35,7 +36,6 @@ return {
         require("ibl").setup_buffer(0, { enabled = state })
       end,
     }):map("<leader>ug")
-
     return {
       indent = {
         char = "│",

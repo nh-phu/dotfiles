@@ -9,6 +9,7 @@ return {
                     "lua_ls",  -- Lua
                     "clangd",  -- C/C++
                     "pyright", -- Python (or "pylsp" for alternative)
+                    "bashls", -- Bash
                 },
                 automatic_installation = true,
             })
@@ -128,7 +129,7 @@ return {
                         end
                     end, { "i", "s" }),
                     ["<S-Tab>"] = cmp.mapping(function(fallback)
-                        if luasnip.jumpable(-1) then
+                        if luasnip.jumpable() then
                             luasnip.jump(-1)
                         else
                             fallback()
