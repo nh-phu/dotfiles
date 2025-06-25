@@ -1,0 +1,34 @@
+
+[device]
+# Name of your librespot device
+name = "MyLibrespotPlayer"
+
+[theme]
+# True = use Unicode icons; False = ASCII fallback
+use_unicode_icons = true
+# True = enable album cover art (via Kitty or similar)
+show_album_cover = true
+# Can be "dark", "light", or "original"
+theme = "dark"
+
+[keybindings]
+# Keybindings for controls
+play_pause = "Space"
+next_track = "l"
+previous_track = "h"
+shuffle = "s"
+repeat = "r"
+search = "/"
+devices = ":"
+focus_playlist = "f"
+queue = "q"
+devices = "d"
+vol_up = "=
+vol_down = "-"
+
+[app]
+# Layout: vertical (default), horizontal, compact
+layout = "vertical"
+# Enable cover image popup (requires Kitty/Kitten)
+cover_popup = true
+cover_size = 12

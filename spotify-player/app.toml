@@ -1,0 +1,51 @@
+theme = "default"
+client_id = "" # go to https://developer.spotify.com/dashboard
+client_port = 8080
+login_redirect_uri = "http://127.0.0.1:8989/login"
+playback_format = """
+{status} {track} • {artists}
+{album}
+{metadata}"""
+tracks_playback_limit = 50
+app_refresh_duration_in_ms = 32
+playback_refresh_duration_in_ms = 0
+page_size_in_rows = 20
+play_icon = "▶"
+pause_icon = "▌▌"
+liked_icon = "♥"
+border_type = "Plain"
+progress_bar_type = "Rectangle"
+enable_cover_image_cache = true
+default_device = "Librespot"
+seek_duration_secs = 5
+sort_artist_albums_by_type = false
+use_unicode_icons = true
+show_album_cover = true
+primary = "#bd93f9"
+secondary = "#50fa7b"
+accent = "#ff79c6"
+background = "#282a36"
+foreground = "#f8f8f2"
+
+[layout]
+playback_window_position = "Top"
+playback_window_height = 6
+
+[layout.library]
+playlist_percent = 40
+album_percent = 40
+
+[device]
+name = "spotify-player"
+device_type = "speaker"
+volume = 70
+bitrate = 320
+audio_cache = false
+normalization = false
+autoplay = false
+
+[app_config]
+cover_img_length = 9 
+cover_img_height = 6 
+image_protocal = "Kitty"
+vol_up = "="
