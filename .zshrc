@@ -22,8 +22,6 @@ export GTK_IM_MODULE=default
 export QT_IM_MODULE=default
 export XMODIFIERS=@im=default
 export INPUT_METHOD=default
-# Simplified LS_COLORS to avoid parsing issues
-export LS_COLORS="di=01;34:ln=01;36:ex=01;32:*.tar=01;31:*.gz=01;31:*.zip=01;31:*.jpg=01;35:*.png=01;35:*.mp3=00;36"
 # ─── PATH ────────────────────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
@@ -104,16 +102,23 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
 zstyle ':completion:*' list-colors ''
 
 compinit
+# Autosuggestion settings
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'                    # Gray color
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)             # Better suggestions
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20                        # Prevent long suggestions
 
-#Keybind
-bindkey '^F' autosuggest-accept
-bindkey '^[f' forward-word
-bindkey '^E' autosuggest-clear
+# Autosuggestion keybinds
+bindkey '^F' autosuggest-accept           # Ctrl+F: accept full suggestion
+bindkey '^[f' forward-word                # Alt+F: accept one word
+bindkey '^E' autosuggest-clear            # Ctrl+E: clear suggestion
 
-# Menu navigation
-bindkey '^N' menu-complete                # Ctrl+N: next completion
-bindkey '^P' reverse-menu-complete        # Ctrl+P: previous completion
-bindkey '^[[Z' reverse-menu-complete      # Shift+Tab: previous completion
+# History navigation (without accepting autosuggestions)
+#bindkey '^N' menu-complete 
+#bindkey '^P' reverse-menu-complete 
+#bindkey '^N' history-beginning-search-forward  # Ctrl+N: next history entry
+#bindkey '^P' history-beginning-search-backward # Ctrl+P: previous history entry:
+bindkey '^N' down-history # Ctrl+N: next history entry
+bindkey '^P' up-history # Ctrl+P: previous history entry:
 
 # When in menu-select mode (visual menu):
 zmodload zsh/complist
@@ -135,3 +140,4 @@ bindkey '^R' fzf-history-widget           # Ctrl+R: fzf history search
 
 # Vi mode
 bindkey -v
+bindkey -M vicmd -r ':'

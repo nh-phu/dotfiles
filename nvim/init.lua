@@ -10,7 +10,6 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a"
-vim.keymap.set("n", "<C-Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 -- Set up basic options for Neovim
 
 -- Show absolute line numbers + relative numbers (relative is handy for motions)
@@ -68,8 +67,8 @@ vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3e4452" })
 
 -- Bufferline settings
-vim.keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<S-h>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<A-l>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<A-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
 vim.opt.wrap = false
 vim.opt.scrolloff = 5
