@@ -1,3 +1,4 @@
+activate-linux-git r363.746a84e-1
 alsa-utils 1.2.14-1
 ani-cli 4.10-1
 appmenu-gtk-module 25.04-1
@@ -54,9 +55,10 @@ gvfs-mtp 1.57.2-4
 gvim 9.1.1431-1
 highlight 4.16-1
 htop 3.4.1-1
-hyprland 0.49.0-1
-hyprpaper 0.7.5-1
-hyprpicker 0.4.5-2
+hyprland 0.49.0-2
+hyprpaper 0.7.5-2
+hyprpicker 0.4.5-3
+hyprsysteminfo 0.1.3-3
 imagemagick 7.1.1.47-2
 imv 4.5.0-5
 inetutils 2.6-1
@@ -160,6 +162,7 @@ ttf-hack 3.003-7
 ttf-hack-nerd 3.4.0-1
 ttf-jetbrains-mono-nerd 3.4.0-1
 ttf-liberation 2.1.5-2
+tty-clock 2.3-2
 tumbler 4.20.0-3
 ueberzugpp 2.9.7-1
 ufw 0.36.2-5
@@ -170,7 +173,7 @@ viu 1.5.1-1
 vlc 3.0.21-24
 vulkan-intel 1:25.1.4-1
 vulkan-tools 1.4.313.0-1
-waybar 0.12.0-1
+waybar 0.13.0-1
 weechat 4.6.3-1
 wev 1.0.0-13
 wget 1.25.0-2
@@ -182,13 +185,13 @@ xcursor-comix 0.10.1-1
 xcursor-themes 1.0.7-2
 xcursor-vanilla-dmz 0.4.5.2-1
 xcursor-vanilla-dmz-aa 0.4.5.2-1
-xdg-desktop-portal-hyprland 1.3.9-9
+xdg-desktop-portal-hyprland 1.3.9-10
 xdg-utils 1.2.1-1
 xorg-xhost 1.0.10-1
 yay 12.5.0-1
 yay-debug 12.5.0-1
 yazi 25.5.31-1
-yt-dlp 2025.06.09-1
+yt-dlp 2025.06.25-1
 zathura 0.5.11-1
 zathura-pdf-mupdf 0.4.4-17
 zen-browser-bin 1.13.2b-3

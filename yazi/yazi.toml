@@ -102,10 +102,14 @@ rules = [
   # Documents
   { mime = "application/pdf", use = "pdf" },
   { mime = "application/vnd.oasis.opendocument.*", use = "document" },
+  { mime = "application/oasis.opendocument.*", use = "document" },
   { mime = "application/vnd.openxmlformats-officedocument.*", use = "document" },
+  { mime = "application/openxmlformats-officedocument.*", use = "document" },
   { mime = "application/msword", use = "document" },
   { mime = "application/vnd.ms-excel", use = "document" },
+  { mime = "application/ms-excel", use = "document" },
   { mime = "application/vnd.ms-powerpoint", use = "document" },
+  { mime = "application/ms-powerpoint", use = "document" },
   
   # PDFs
   { mime = "application/pdf", use = "pdf" },
