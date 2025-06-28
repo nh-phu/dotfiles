@@ -1,2 +1,14 @@
-scripts/vim
+ncmpcpp/error.log
+ncmpcpp/lyrics
+mpv/youtube.com.cookies.txt
+mpd/playlists/
+mpd/database
+mpd/log
+mpd/pid
+mpd/socket
+mpd/state
+mpd/sticker.sql
 scripts/rickroll
+scripts/vim
+yazi/plugins
+yt-dlp/youtube.com.cookies.txt

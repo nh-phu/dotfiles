@@ -1,0 +1,24 @@
+# Save in ~/Videos/yt-dlp
+-o ~/Videos/yt-dlp/%(title)s.%(ext)s
+--cookies ~/.config/yt-dlp/youtube.com.cookies.txt
+# Prefer 1080p video with good audio (but avoid AV1 if file size matters)
+-f "bv*[height<=1080][vcodec!*=av01]+ba/b[height<=1080]"
+
+# Merge into mp4 if possible, fallback to mkv
+--merge-output-format mp4
+
+# Output filename (short, readable)
+-o "%(title).80s.%(ext)s"
+
+# Embed useful metadata (title, thumbnail, etc.)
+--embed-thumbnail
+--embed-metadata
+--add-metadata
+
+# Progress bar and terminal info
+--progress
+--console-title
+
+# Optional: faster download with aria2 (if installed)
+# --external-downloader aria2c
+# --external-downloader-args "-x 16 -k 1M"

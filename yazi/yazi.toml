@@ -57,6 +57,7 @@ image = [
 video = [
   { run = 'mpv "$@"', desc = "Play with mpv", orphan = true , for = "unix"},
   { run = 'vlc "$@"', desc = "Play with vlc", orphan = true , for = "unix"},
+  { run = 'ffplay "$@"', desc = "Play with ffplay", orphan = true , for = "unix"},
 ]
 
 # Audio
