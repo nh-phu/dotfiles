@@ -22,8 +22,7 @@ python-eyed3 0.9.8-1
 spotify 1:1.2.63.394-1
 spotify-player-full 0.20.6-1
 spotify-player-full-debug 0.20.6-1
-tauri-cli 2.6.1-1
-tauri-cli-debug 2.6.1-1
+tauri-cli-debug 2.6.2-1
 ttf-all-the-icons 5.0.0-1
 tty-clock 2.3-2
 tty-clock-debug 2.3-2

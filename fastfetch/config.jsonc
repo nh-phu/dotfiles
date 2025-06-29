@@ -9,8 +9,8 @@
     "display": {
         "separator": " -> ",
         "color": {
-            "keys": "green",
-            "title": "red",
+//            "keys": "green",
+            "title": "white",
             "output": "white", //"38;5;123",
             "separator": "90"
         }
@@ -23,7 +23,9 @@
         },
         {
             "type": "title",
-            "keyWidth": 10
+            "key": " User",
+            "keyWidth": 10,
+            "keyColor": "red"
         },
         {
             "type": "custom",
