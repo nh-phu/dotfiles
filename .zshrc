@@ -34,6 +34,8 @@ export GTK_IM_MODULE=default
 export QT_IM_MODULE=default
 export XMODIFIERS=@im=default
 export INPUT_METHOD=default
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # ─── PATH ────────────────────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 

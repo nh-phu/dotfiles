@@ -1,5 +1,5 @@
 theme = "default"
-client_id = "" # go to https://developer.spotify.com/dashboard
+client_id = "" # go to https://developer.spotify.com/dashboard # go to https://developer.spotify.com/dashboard
 client_port = 8080
 login_redirect_uri = "http://127.0.0.1:8989/login"
 playback_format = """
