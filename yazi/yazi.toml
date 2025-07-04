@@ -62,8 +62,9 @@ video = [
 
 # Audio
 audio = [
-  { run = 'mpv "$@"', desc = "Play with mpv", orphan = true },
-  { run = 'vlc "$@"', desc = "Play with vlc", orphan = true },
+  { run = 'mpv "$@"', desc = "Play with mpv", orphan = false },
+  { run = 'mpc "$@"', desc = "Play with mpc", orphan = false },
+  { run = 'vlc "$@"', desc = "Play with vlc", orphan = false },
 ]
 
 # Web browsers
@@ -77,6 +78,7 @@ torrent = [
 
 fallback = [
     { run = 'xdg-open "$@"', orphan = true, desc = "Open with default app" },
+    { run = 'nvim "$@"', desc = "Edit with Neovim", orphan = true, for = "unix" },
 ]
 
 # Archives

@@ -12,3 +12,4 @@ scripts/rickroll
 scripts/vim
 yazi/plugins
 yt-dlp/youtube.com.cookies.txt
+zsh/plugins/fzf-tab

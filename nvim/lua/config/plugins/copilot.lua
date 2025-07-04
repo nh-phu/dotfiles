@@ -51,7 +51,7 @@ return {
         config = function()
             require("CopilotChat").setup({ -- Fixed: was "copilotchat"
                 debug = false,
-                model = 'claude-3.5-sonnet', -- Upgraded from gpt-4 for better performance
+                model = 'gpt-4.1', -- Upgraded from gpt-4 for better performance
                 agent = 'copilot',
                 temperature = 0.1,
                 max_tokens = 4096, -- Increase token limit for longer responses
@@ -73,8 +73,6 @@ return {
                 auto_follow_cursor = true,
                 auto_insert_mode = false,
                 clear_chat_on_new_prompt = false,
-                show_folds = true,
-                show_help = true,
 
                 -- Custom prompts
                 prompts = {

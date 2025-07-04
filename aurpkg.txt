@@ -1,11 +1,14 @@
 activate-linux-git
 ani-cli
-blesh-git
+blesh
 catppuccin-gtk-theme-mocha
 grimblast-git
 hyprsysteminfo
 kotatsu-dl-git
 librespot
+nodejs-mapscii
+osu-lazer-bin
+osu-mime
 paru
 paru-debug
 pfetch

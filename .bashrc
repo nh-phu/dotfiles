@@ -1,5 +1,5 @@
 # ~/.bashrc
-
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
@@ -21,7 +21,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
   source /usr/share/bash-completion/bash_completion
 
 # === ble.sh (Bash Line Editor) ===
-[[ -s ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
+#[[ -s ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
 
 # === ble.sh Appearance Tweaks ===
 
@@ -89,3 +89,8 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+
+[[ ! ${BLE_VERSION-} ]] || ble-attach
+
+source /home/puchan/.config/broot/launcher/bash/br
