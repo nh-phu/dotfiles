@@ -39,13 +39,32 @@ setopt HIST_REDUCE_BLANKS
 alias ls='ls --color=auto' 
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias vi='nvim'
 alias neovim='nvim'
 alias rm='rm -i'
-alias sl='sl | lolcat'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
 alias :q='exit'
 alias cat='bat'
+
+# ─── Bindings ───────────────────────────────────────────────────────────────
+# When in menu-select mode (visual menu):
+zmodload zsh/complist
+bindkey -M menuselect '^N' down-line-or-history     # Ctrl+N: down
+bindkey -M menuselect '^P' up-line-or-history       # Ctrl+P: up  
+bindkey -M menuselect '^F' accept-and-hold          # Ctrl+F: accept but keep menu
+bindkey -M menuselect '^[[Z' reverse-menu-complete  # Shift+Tab: up
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=5
+bindkey -M vicmd -r ':'
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^V' edit-command-line
+
+# eval
+eval "$(zoxide init zsh)"
 
 # ─── Functions ───────────────────────────────────────────────────────────────
 source $HOME/.config/zsh/func.zsh
@@ -67,17 +86,3 @@ source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# When in menu-select mode (visual menu):
-zmodload zsh/complist
-bindkey -M menuselect '^N' down-line-or-history     # Ctrl+N: down
-bindkey -M menuselect '^P' up-line-or-history       # Ctrl+P: up  
-bindkey -M menuselect '^F' accept-and-hold          # Ctrl+F: accept but keep menu
-bindkey -M menuselect '^[[Z' reverse-menu-complete  # Shift+Tab: up
-
-
-# Vi mode
-bindkey -v
-bindkey -M vicmd -r ':'
-
-# eval
-eval "$(zoxide init zsh)"

@@ -5,7 +5,7 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         highlight = { enable = true },
-        incremental_selection = {enable = true},
+        incremental_selection = { enable = true },
         indent = { enable = true },
         ensure_installed = {
           "asm",
@@ -27,6 +27,7 @@ return {
           "python",
           "query",
           "regex",
+          "rust",
           "toml",
           "tsx",
           "typescript",
@@ -38,23 +39,22 @@ return {
       })
     end,
   },
-{
-  "RRethy/vim-illuminate",
-  config = function()
-    -- Configure vim-illuminate
-    require('illuminate').configure({
-      providers = {
-        'lsp',
-        'treesitter',
-        'regex',
-      },
-      delay = 100, -- delay in milliseconds
-      filetypes_denylist = {
-        'dirvish',
-        'fugitive',
-      },
-    })
-  end,
-},
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      -- Configure vim-illuminate
+      require('illuminate').configure({
+        providers = {
+          'lsp',
+          'treesitter',
+          'regex',
+        },
+        delay = 100, -- delay in milliseconds
+        filetypes_denylist = {
+          'dirvish',
+          'fugitive',
+        },
+      })
+    end,
+  },
 }
-

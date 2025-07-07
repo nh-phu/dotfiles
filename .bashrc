@@ -52,7 +52,6 @@ PS1='[\u@\h \W]\$ '
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
-alias sl='sl | lolcat'
 alias neovim='nvim'
 alias spotify-player='spotify_player'
 HISTSIZE=10000                    # Commands to remember in memory

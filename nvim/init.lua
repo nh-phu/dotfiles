@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Keep 4 spaces for C, C++, and other languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"c", "cpp", "java", "python", "bash", "sh"},
+    pattern = {"c", "cpp", "java", "python", "bash", "sh", "zsh", "rust"},
     callback = function()
         vim.opt_local.shiftwidth = 4
         vim.opt_local.tabstop = 4
@@ -72,3 +72,15 @@ vim.keymap.set('n', '<A-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
 vim.opt.wrap = false
 vim.opt.scrolloff = 5
+
+-- Undo
+vim.opt.undofile = true                              -- Enable persistent undo
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"  -- Set undo directory
+vim.opt.undolevels = 10000                           -- Maximum number of changes that can be undone
+vim.opt.undoreload = 10000                           -- Maximum number lines to save for undo on buffer reload
+
+-- Create undo directory if it doesn't exist
+local undo_dir = vim.fn.stdpath("data") .. "/undo"
+if vim.fn.isdirectory(undo_dir) == 0 then
+  vim.fn.mkdir(undo_dir, "p")
+end

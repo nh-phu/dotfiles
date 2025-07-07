@@ -15,8 +15,8 @@ done
 sed -i 's/client_id = ".*"/client_id = "" # go to https:\/\/developer.spotify.com\/dashboard/' \
     "$HOME/dotfiles/spotify-player/app.toml"
 
-pacman -Qqe > "$HOME/dotfiles/pkglist.txt"
-paru -Qqm > "$HOME/dotfiles/aurpkg.txt"
+pacman -Qqen > "$HOME/dotfiles/pkglist.txt"
+paru -Qqem > "$HOME/dotfiles/aurpkg.txt"
 
 rsync -av $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
 rsync -av $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"

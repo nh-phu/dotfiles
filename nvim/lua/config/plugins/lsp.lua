@@ -10,6 +10,7 @@ return {
                     "clangd",  -- C/C++
                     "pyright", -- Python (or "pylsp" for alternative)
                     "bashls", -- Bash
+                    "rust_analyzer" -- Rust
                 },
                 automatic_installation = true,
             })
