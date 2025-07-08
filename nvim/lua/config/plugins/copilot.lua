@@ -33,6 +33,7 @@ return {
             })
         end,
     },
+
     {
         "zbirenbaum/copilot-cmp",
         event = "InsertEnter", -- Fixed capitalization
@@ -73,7 +74,7 @@ return {
                 auto_follow_cursor = true,
                 auto_insert_mode = false,
                 clear_chat_on_new_prompt = false,
-
+       
                 -- Custom prompts
                 prompts = {
                     Explain = {

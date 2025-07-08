@@ -15,6 +15,7 @@ return {
       view = {
         width = 30,
       },
+
       renderer = {
         add_trailing = false,
         group_empty = false,
@@ -43,6 +44,7 @@ return {
             none = " ",
           },
         },
+
         icons = {
           web_devicons = {
             file = {
@@ -70,6 +72,7 @@ return {
             hidden = false,
             diagnostics = true,
             bookmarks = true,
+
           },
           glyphs = {
             default = "",
@@ -87,6 +90,7 @@ return {
               symlink = "",
               symlink_open = "",
             },
+
             git = {
               unstaged = "✗",
               staged = "✓",
@@ -105,32 +109,30 @@ return {
     })
 
     -- Optional keymap
--- lua/config/nvimtree-toggle-path.lua
+    -- lua/config/nvimtree-toggle-path.lua
+    vim.keymap.set("n", "<leader>e", function()
+      vim.ui.input({ prompt = "Enter directory path (leave blank for project root): " }, function(input)
+        local path = input
 
-vim.keymap.set("n", "<leader>e", function()
-  vim.ui.input({ prompt = "Enter directory path (leave blank for project root): " }, function(input)
-    local path = input
+        if not input or input == "" then
+          path = vim.fn.getcwd()
+        else
+          path = vim.fn.expand(input)
+        end
 
-    if not input or input == "" then
-      path = vim.fn.getcwd()
-    else
-      path = vim.fn.expand(input)
-    end
+        if vim.fn.isdirectory(path) == 1 then
+          -- Change working directory
+          vim.cmd("cd " .. vim.fn.fnameescape(path))
 
-    if vim.fn.isdirectory(path) == 1 then
-      -- Change working directory
-      vim.cmd("cd " .. vim.fn.fnameescape(path))
-
-      -- Use nvim-tree API to reopen tree at the new root
-      local api = require("nvim-tree.api")
-      api.tree.close()
-      api.tree.open()
-    else
-      vim.notify("Invalid directory: " .. path, vim.log.levels.ERROR)
-    end
-  end)
-end, { desc = "Prompt for path and open NvimTree" })
-    vim.keymap.set("n", "<leader>r", ":NvimTreeFocus<CR>", { desc = "NvimTree Focus" })
+          -- Use nvim-tree API to reopen tree at the new root
+          local api = require("nvim-tree.api")
+          api.tree.close()
+          api.tree.open()
+        else
+          vim.notify("Invalid directory: " .. path, vim.log.levels.ERROR)
+        end
+      end)
+    end, { desc = "Prompt for path and open NvimTree" })
+    vim.keymap.set("n", "<leader>R", ":NvimTreeFocus<CR>", { desc = "NvimTree Focus" })
   end,
 }
-

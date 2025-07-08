@@ -9,6 +9,7 @@ return {
             'nvim-tree/nvim-web-devicons',
             'lewis6991/gitsigns.nvim',
         },
+
         config = function()
             local telescope = require('telescope')
             local actions = require('telescope.actions')

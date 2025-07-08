@@ -7,6 +7,7 @@ return {
         highlight = { enable = true },
         incremental_selection = { enable = true },
         indent = { enable = true },
+
         ensure_installed = {
           "asm",
           "bash",
@@ -39,16 +40,19 @@ return {
       })
     end,
   },
+
   {
     "RRethy/vim-illuminate",
     config = function()
       -- Configure vim-illuminate
       require('illuminate').configure({
+
         providers = {
           'lsp',
           'treesitter',
           'regex',
         },
+
         delay = 100, -- delay in milliseconds
         filetypes_denylist = {
           'dirvish',

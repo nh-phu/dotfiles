@@ -6,6 +6,7 @@ return {
   { "numToStr/Comment.nvim", config = true },
 
   -- File tree (optional)
+  
 --  { "nvim-tree/nvim-tree.lua", config = true },
   { "nvim-tree/nvim-web-devicons" },
   {

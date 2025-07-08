@@ -1,5 +1,4 @@
 -- lua/config/highlight_yank.lua
-
 -- Highlight yanked text briefly using the Visual highlight group
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",

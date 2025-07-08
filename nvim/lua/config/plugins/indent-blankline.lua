@@ -22,6 +22,7 @@ return {
     words = { enabled = true },
   },
 },
+
     {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufRead",
@@ -35,7 +36,7 @@ return {
       set = function(state)
         require("ibl").setup_buffer(0, { enabled = state })
       end,
-    }):map("<leader>ug")
+    }):map("<leader>i")
     return {
       indent = {
         char = "│",

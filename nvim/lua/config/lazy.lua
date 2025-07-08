@@ -35,6 +35,7 @@ require("lazy").setup({
       vim.cmd.colorscheme("catppuccin")
     end,
 },
+
     -- import your plugins
     { import = "config.plugins" },
 ui = {
@@ -66,6 +67,7 @@ ui = {
     task = "✔ ",
     list = { "●", "➜", "★", "‒" },
   },
+
   browser = nil,
   throttle = 1000 / 30,
   custom_keys = {
@@ -77,6 +79,7 @@ ui = {
       end,
       desc = "Open lazygit log",
     },
+
     ["<localleader>i"] = {
       function(plugin)
         require("lazy.util").notify(vim.inspect(plugin), {
@@ -86,6 +89,7 @@ ui = {
       end,
       desc = "Inspect Plugin",
     },
+
     ["<localleader>t"] = {
       function(plugin)
         require("lazy.util").float_term(nil, {
