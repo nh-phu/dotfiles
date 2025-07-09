@@ -1,0 +1,12 @@
+[font]
+normal = { family = "Hack Nerd Font" }
+size = 12
+
+[window]
+opacity = 0.8
+blur = true
+
+[general]
+import = [
+    "~/.config/alacritty/themes/one_dark.toml",
+]

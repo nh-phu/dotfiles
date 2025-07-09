@@ -11,7 +11,7 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     explorer = { enabled = false},
-    indent = { enabled = true },
+    indent = { enabled = false },
     input = { enabled = true },
     picker = { enabled = true },
     notifier = { enabled = true },
@@ -22,7 +22,6 @@ return {
     words = { enabled = true },
   },
 },
-
     {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufRead",

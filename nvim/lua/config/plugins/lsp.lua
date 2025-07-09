@@ -85,7 +85,7 @@ return {
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+                    vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, opts)
                     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
                     vim.keymap.set('n', '<leader>F', function()
@@ -149,12 +149,12 @@ return {
                     ["<C-e>"] = cmp.mapping.abort(),                    -- Ctrl+e to close
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp", priority = 900 },
-                    { name = "copilot",  priority = 800 },
-                    { name = "luasnip",  priority = 700 },
+                    { name = "nvim_lsp", priority = 900 , group_index = 1},
+                    { name = "copilot",  priority = 800 , group_index = 1},
+                    { name = "luasnip",  priority = 700 , group_index = 1},
                 }, {
-                    { name = "buffer", priority = 600 },
-                    { name = "path",   priority = 500 },
+                    { name = "buffer", priority = 600 , group_index = 2},
+                    { name = "path",   priority = 500 , group_index = 2},
                 }),
                 formatting = {
                     format = function(entry, vim_item)

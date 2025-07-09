@@ -33,7 +33,7 @@ monitor = , preferred, auto, 1
 # See https://wiki.hyprland.org/Configuring/Keywords/
 
 # Set programs that you use
-$terminal = alacritty
+$terminal = kitty
 $fileManager = yazi
 $menu = wofi --show drun
 
@@ -61,7 +61,7 @@ exec-once = alacritty -e sh -c "fortune | cowsay -f stegosaurus | lolcat; exec z
 #exec-once = export GTK_ICON_THEME=Adwaita
 exec-once = mako &
 exec-once = fcitx5 &
-exec-once = kitty -e sh -c "setxkbmap -option caps:escape" &
+exec-once = alacritty -e sh -c "setxkbmap -option caps:escape" &
 
 #############################
 ### ENVIRONMENT VARIABLES ###
@@ -221,7 +221,7 @@ misc {
     force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
     enable_swallow = false
-    swallow_regex = ^(alacritty)$
+    swallow_regex = ^(kitty)$
     layers_hog_keyboard_focus = true
     always_follow_on_dnd = true
     vrr = 2
@@ -274,10 +274,10 @@ device {
 $mainMod = SUPER # Sets "Windows" key as main modifier
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-bind = $mainMod, RETURN, exec, alacritty 
+bind = $mainMod, RETURN, exec, kitty 
 bind = $mainMod, Q, killactive,
 #bind = $mainMod, M, exit,
-bind = $mainMod, E, exec, thunar
+bind = $mainMod, E, exec, ~/.local/bin/thunar #file manager
 bind = $mainMod, P, togglefloating,
 bind = $mainMod, W, exec, pkill waybar || waybar &  
 #bind = $mainMod, W, exec, ~/.local/bin/waybar-toggle

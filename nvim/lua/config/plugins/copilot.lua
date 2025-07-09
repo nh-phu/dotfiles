@@ -2,7 +2,7 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
-        event = "InsertEnter",
+        event = "VimEnter",
         config = function()
             require("copilot").setup({
                 panel = {
@@ -42,6 +42,7 @@ return {
             require("copilot_cmp").setup()
         end,
     },
+
     {
         "CopilotC-Nvim/CopilotChat.nvim", -- Fixed: was "copilotc-nvim/copilotchat.nvim"
         branch = "main", -- Changed from "main" to "canary" for latest features
@@ -186,7 +187,7 @@ return {
             vim.keymap.set("n", "<leader>ccf", "<cmd>CopilotChatFix<cr>", { desc = "CopilotChat - Fix code" })
             vim.keymap.set("n", "<leader>cco", "<cmd>CopilotChatOptimize<cr>", { desc = "CopilotChat - Optimize code" })
             vim.keymap.set("n", "<leader>ccd", "<cmd>CopilotChatDocs<cr>", { desc = "CopilotChat - Add documentation" })
-            vim.keymap.set("n", "<leader>cct", "<cmd>CopilotChatTests<cr>", { desc = "CopilotChat - Generate tests" })
+--            vim.keymap.set("n", "<leader>cct", "<cmd>CopilotChatTests<cr>", { desc = "CopilotChat - Generate tests" })
 
             -- New commands
             vim.keymap.set("n", "<leader>ccn", "<cmd>CopilotChatBetterNamings<cr>",

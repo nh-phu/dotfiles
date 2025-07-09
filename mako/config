@@ -15,6 +15,7 @@ ignore-timeout=1
 font=monospace 11
 anchor=bottom-right
 outer-margin=20, 3
+group-by=summary
 
 [urgency=low]
 border-color=#38a169

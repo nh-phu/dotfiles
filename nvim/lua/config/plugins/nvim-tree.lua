@@ -110,7 +110,7 @@ return {
 
     -- Optional keymap
     -- lua/config/nvimtree-toggle-path.lua
-    vim.keymap.set("n", "<leader>e", function()
+    vim.keymap.set("n", "<leader>o", function()
       vim.ui.input({ prompt = "Enter directory path (leave blank for project root): " }, function(input)
         local path = input
 
@@ -133,6 +133,6 @@ return {
         end
       end)
     end, { desc = "Prompt for path and open NvimTree" })
-    vim.keymap.set("n", "<leader>R", ":NvimTreeFocus<CR>", { desc = "NvimTree Focus" })
+    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "NvimTree Focus" })
   end,
 }

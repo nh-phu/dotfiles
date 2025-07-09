@@ -46,6 +46,7 @@ alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
 alias :q='exit'
 alias cat='bat'
+alias clock='tty-clock -csS'
 
 # ─── Bindings ───────────────────────────────────────────────────────────────
 # When in menu-select mode (visual menu):

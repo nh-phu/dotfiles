@@ -1,3 +1,5 @@
+7zip
+alacritty
 alsa-utils
 appmenu-gtk-module
 asciiquarium
@@ -189,6 +191,7 @@ xcursor-comix
 xcursor-themes
 xcursor-vanilla-dmz
 xcursor-vanilla-dmz-aa
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xf86-video-intel
 xorg-xhost
@@ -196,6 +199,7 @@ yazi
 yt-dlp
 zathura
 zathura-pdf-mupdf
+zed
 zip
 zoxide
 zsh
