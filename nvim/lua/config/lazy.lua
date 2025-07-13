@@ -2,7 +2,8 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none",
+    "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
@@ -75,7 +76,6 @@ require("lazy").setup({
         {
       "rose-pine/neovim",
       name = "rose-pine",
-      priority = 1000,
       config = function()
         require("rose-pine").setup({
           variant = "moon",
@@ -104,7 +104,8 @@ require("lazy").setup({
     ui = {
       size = { width = 0.8, height = 0.8 },
       wrap = true,
-      border = "rounded", -- you can change this to "rounded" or "single" for a bordered window
+      border = "rounded",
+      -- you can change this to "rounded" or "single" for a bordered window
       backdrop = 60,
       title = nil,
       title_pos = "center",

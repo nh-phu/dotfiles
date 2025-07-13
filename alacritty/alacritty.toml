@@ -1,5 +1,5 @@
 [font]
-normal = { family = "Hack Nerd Font" }
+normal = { family = "Hack Nerd Font", style = "Mono" }
 size = 12
 
 [window]
@@ -10,3 +10,7 @@ blur = true
 import = [
     "~/.config/alacritty/themes/one_dark.toml",
 ]
+
+[colors]
+cursor = { text = "CellBackground", cursor = "#cccccc" }
+vi_mode_cursor = { text = "CellBackground", cursor = "#cccccc" }

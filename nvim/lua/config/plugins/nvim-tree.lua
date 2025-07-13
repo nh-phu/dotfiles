@@ -8,6 +8,11 @@ return {
   config = function()
     require("nvim-tree").setup({
       sync_root_with_cwd = true,
+      actions = {
+      open_file = {
+        quit_on_open = true,
+      },
+      },
       update_focused_file = {
         enable = true,
         update_root = true,
@@ -22,10 +27,10 @@ return {
         full_name = false,
         root_folder_label = ":~:s?$?/..?",
         indent_width = 2,
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        special_files = { "cargo.toml", "makefile", "readme.md", "readme.md" },
         hidden_display = "none",
         symlink_destination = true,
-        decorators = { "Git", "Open", "Hidden", "Modified", "Bookmark", "Diagnostics", "Copied", "Cut", },
+        decorators = { "git", "open", "hidden", "modified", "bookmark", "diagnostics", "copied", "cut", },
         highlight_git = "none",
         highlight_diagnostics = "none",
         highlight_opened_files = "none",
@@ -111,13 +116,17 @@ return {
     -- Optional keymap
     -- lua/config/nvimtree-toggle-path.lua
     vim.keymap.set("n", "<leader>o", function()
-      vim.ui.input({ prompt = "Enter directory path (leave blank for project root): " }, function(input)
+      vim.ui.input({
+        prompt = "Enter directory path (leave blank for project root): ",
+        completion = "dir"
+        }, function(input)
+          if input == nil then return end
         local path = input
-
         if not input or input == "" then
           path = vim.fn.getcwd()
         else
-          path = vim.fn.expand(input)
+          path = vim.fs.normalize(vim.fn.expand(input))
+          path = vim.fn.fnamemodify(path, ":p")
         end
 
         if vim.fn.isdirectory(path) == 1 then
@@ -133,6 +142,6 @@ return {
         end
       end)
     end, { desc = "Prompt for path and open NvimTree" })
-    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "NvimTree Focus" })
+    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "NvimTree Toggle" })
   end,
 }

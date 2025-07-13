@@ -1,5 +1,4 @@
-#!/bin/bash
-# Save as ~/.config/hypr/scripts/toggle-layout.sh
+#!/usr/bin/env bash
 
 current_layout=$(hyprctl getoption general:layout | grep -o 'dwindle\|master')
 

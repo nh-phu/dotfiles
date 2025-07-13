@@ -13,9 +13,10 @@ fi
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export MANPAGER="nvim +Man!"
+export TERMCMD='kitty'
 
 # Input method support (Wayland/X11)
-export GTK_IM_MODULE=default
+export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=default
 export XMODIFIERS=@im=default
 export INPUT_METHOD=default

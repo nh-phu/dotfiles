@@ -5,6 +5,7 @@ return {
       require("gitsigns").setup()
     end,
   },
-  -- other plugins here
+  {
+    "tpope/vim-fugitive",
+  },
 }
-

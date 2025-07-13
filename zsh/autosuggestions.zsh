@@ -2,7 +2,7 @@
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Autosuggestion settings
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'                    # Gray color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#888888'                    # Gray color
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)             # Better suggestions
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20                        # Prevent long suggestions
 

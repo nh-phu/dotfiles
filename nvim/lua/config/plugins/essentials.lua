@@ -9,12 +9,5 @@ return {
   
 --  { "nvim-tree/nvim-tree.lua", config = true },
   { "nvim-tree/nvim-web-devicons" },
-  {
-  "dstein64/vim-startuptime",
-  cmd = "StartupTime",
-  init = function()
-    vim.g.startuptime_tries = 10
-  end,
-},
 }
 

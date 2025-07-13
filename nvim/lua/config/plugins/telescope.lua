@@ -1,9 +1,11 @@
 return {
-    {
-        'nvim-telescope/telescope.nvim',
+    {   'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
+        lazy = true,
+        priority = 500,
         dependencies = {
             'nvim-lua/plenary.nvim',
+            'nvim-treesitter/nvim-treesitter',
             -- Optional but recommended extensions
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
             'nvim-tree/nvim-web-devicons',
@@ -140,7 +142,7 @@ return {
 
             -- File navigation
             vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
-            vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+            vim.keymap.set('n', '<C-f>', builtin.git_files, {})
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
             vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Recent files' })
 

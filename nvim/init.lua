@@ -1,23 +1,24 @@
-vim.g.mapleader = " "       -- set leader to space
-vim.g.maplocalleader = "\\" -- local leader also space (optional)
-vim.o.updatetime = 300      -- reduce update time to 300ms
 require("config.lazy")
-require("config.hl-yank")
+vim.g.mapleader = " "        -- set leader to space
+vim.g.maplocalleader = "\\"  -- local leader also space (optional)
+vim.o.updatetime = 50        -- reduce update time to 300ms
 vim.opt.termguicolors = true -- enable true color support
 --set keymap for common actions
---vim.api.nvim_set_keymap('n', '<leader>e', ':Snacks.explorer<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true })
+vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a"
+vim.opt.gcr = "a:blinkon0"
+
 -- Set up basic options for Neovim
+vim.opt.colorcolumn = "80"
 
 -- Show absolute line numbers + relative numbers (relative is handy for motions)
-vim.opt.number = true
+vim.opt.nu = true
 vim.opt.relativenumber = false
 
 -- Highlight the current line
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Enable true color support (important for nice colorschemes)
 vim.opt.termguicolors = true
@@ -36,6 +37,7 @@ vim.opt.incsearch = true
 
 -- Use a nice default tab width
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- spaces instead of tabs
 
@@ -58,18 +60,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Enable clipboard integration
-
-
-vim.opt.clipboard = "unnamedplus"
+--vim.opt.clipboard = "unnamedplus"
 
 vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3e4452" })
 
 -- Bufferline settings
-vim.keymap.set('n', '<A-l>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<A-h>', ':BufferLineCyclePrev<CR>', { silent = true })
-vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-]>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<A-[>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>',
+  { noremap = true, silent = true })
 vim.opt.wrap = false
 vim.opt.scrolloff = 5
 
@@ -84,3 +85,14 @@ local undo_dir = vim.fn.stdpath("data") .. "/undo"
 if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.mkdir(undo_dir, "p")
 end
+
+-- lua/config/highlight_yank.lua
+-- Highlight yanked text briefly using the Visual highlight group
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking text",
+  group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+  pattern = "*",
+  callback = function()
+    vim.hl.on_yank({ higroup = "Visual", timeout = 150 })
+  end,
+})

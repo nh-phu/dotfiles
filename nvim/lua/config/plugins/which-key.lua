@@ -15,6 +15,7 @@ return{
         })
 
     wk.add({
+
               -- File group
       { "<leader>f", group = "File" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
@@ -40,11 +41,14 @@ return{
       { "<leader>l", group = "LSP" },
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
       { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart LSP" },
-      { "<leader>lf", function() vim.lsp.buf.format { async = true } end, desc = "Format" },
+      { "<leader>lf", function() vim.lsp.buf.format { async = true } end,
+        desc = "Format" },
       { "<leader>ld", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
       { "<leader>lR", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-      { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
-      { "<leader>lw", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
+      { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",
+        desc = "Document Symbols" },
+      { "<leader>lw", "<cmd>Telescope lsp_workspace_symbols<cr>",
+        desc = "Workspace Symbols" },
       
       -- Diagnostics
       { "<leader>d", group = "Diagnostics" },
@@ -57,6 +61,9 @@ return{
       { "<leader>c", group = "Code" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Actions" },
       { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
+
+      -- Avante
+      { "<leader>a", group = "Avante"},
     })
     end,
 }

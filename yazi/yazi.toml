@@ -14,9 +14,9 @@ wrap = "no"
 max_width = 600
 max_height = 900
 image_filter = "triangle"
-image_quality = 75
+image_quality = 50
 sixel_fraction = 15
-image_delay = 0
+image_delay = 50
 
 [opener]
 # Text files
@@ -26,7 +26,7 @@ edit = [
 ]
     
 folder = [
-  { run = 'thunar "$@"', desc = "Open with thunar", orphan = true, block = true, for = "unix" },
+  { run = 'dolphin "$@"', desc = "Open with dolphin", orphan = true, block = true, for = "unix" },
   { run = 'nvim "$@"', desc = "Edit with Neovim", orphan = true, for = "unix" },
 ]
 
