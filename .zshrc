@@ -39,8 +39,6 @@ setopt HIST_REDUCE_BLANKS
 # ─── Aliases ─────────────────────────────────────────────────────────────────
 alias ls='ls --color=auto' 
 alias grep='grep --color=auto'
-alias vim='nvim'
-alias vi='nvim'
 alias neovim='nvim'
 alias rm='rm -i'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'

@@ -1,12 +1,9 @@
-require("config.lazy")
-vim.g.mapleader = " "        -- set leader to space
-vim.g.maplocalleader = "\\"  -- local leader also space (optional)
 vim.o.updatetime = 50        -- reduce update time to 300ms
 vim.opt.termguicolors = true -- enable true color support
 --set keymap for common actions
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a"
 vim.opt.gcr = "a:blinkon0"
 
@@ -15,7 +12,7 @@ vim.opt.colorcolumn = "80"
 
 -- Show absolute line numbers + relative numbers (relative is handy for motions)
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Highlight the current line
 vim.opt.cursorline = false
@@ -40,6 +37,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- spaces instead of tabs
+vim.opt.showmode = false
 
 -- File type specific indentation
 vim.api.nvim_create_autocmd("FileType", {
@@ -91,8 +89,8 @@ end
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
   group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
-  pattern = "*",
   callback = function()
-    vim.hl.on_yank({ higroup = "Visual", timeout = 150 })
+    vim.hl.on_yank()
   end,
 })
+require("config.lazy")

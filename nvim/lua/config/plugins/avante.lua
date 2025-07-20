@@ -15,7 +15,8 @@ return {
         endpoint = "http://localhost:11434",
         model = "qwen2.5-coder:7b",
       },
-    }
+    },
+    hints = { enabled = false },
   },
   behaviour = {
     auto_suggestions = false,   -- Set to true if you want auto suggestions

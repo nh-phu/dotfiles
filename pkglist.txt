@@ -1,20 +1,20 @@
 7zip
+adw-gtk-theme
 alacritty
 alsa-utils
 appmenu-gtk-module
-asciiquarium
 aspell
 base
 base-devel
 bash-completion
 bat
-blender
 bluez
 bluez-deprecated-tools
 bluez-utils
 brightnessctl
 btop
 btrfs-progs
+calcurse
 calibre
 capitaine-cursors
 cava
@@ -22,7 +22,6 @@ chafa
 chntpw
 cliphist
 cmake
-cmatrix
 code
 cowsay
 cpio
@@ -53,7 +52,6 @@ fzf
 gamemode
 gimp
 git
-github-cli
 gopass
 gparted
 gptfdisk
@@ -67,7 +65,6 @@ gvim
 helvum
 highlight
 htop
-hyfetch
 hyperfine
 hyprland
 hyprpaper
@@ -81,8 +78,8 @@ inotify-tools
 intel-ucode
 jq
 kdenlive
+khal
 kitty
-komikku
 konsole
 lazygit
 lib32-gamemode
@@ -126,7 +123,6 @@ nvtop
 nwg-look
 obs-studio
 obsidian
-octave
 ollama-cuda
 openssh
 openssl-1.1
@@ -144,13 +140,13 @@ python-pynvim
 qbittorrent
 qemu-user
 qpwgraph
+qutebrowser
 reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
 rsync
 rustup
 shotcut
-sl
 slurp
 snap-pac
 snapper
@@ -162,6 +158,7 @@ sshfs
 steam
 supertuxkart
 swappy
+systemd-resolvconf
 tectonic
 telegram-desktop
 thermald
@@ -189,6 +186,7 @@ ufw
 unp
 unzip
 uwsm
+vdirsyncer
 vimix-cursors
 viu
 vlc
@@ -214,6 +212,7 @@ waybar
 weechat
 wev
 wget
+wireguard-tools
 wireplumber
 wl-clipboard
 wofi
