@@ -46,6 +46,7 @@ ebook = [
  pdf = [
    { run = 'zathura "$@"', desc = "Zathura", orphan = true ,for = "unix"},
    { run = 'firefox "$@"', desc = "Firefox", orphan = true ,for = "unix"},
+   { run = 'okular "$@"', desc = "Okular", orphan = true ,for = "unix"},
    { run = 'foliate "$@"', desc = "Foliate", orphan = true ,for = "unix"},
 ]
 # Images

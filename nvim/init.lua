@@ -6,6 +6,9 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 --vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a"
 vim.opt.gcr = "a:blinkon0"
+vim.opt.ignorecase = true -- ignore case in search patterns
+vim.opt.smartcase = true -- smart case sensitivity in search
+vim.opt.wrapscan = false
 
 -- Set up basic options for Neovim
 vim.opt.colorcolumn = "80"
@@ -15,7 +18,8 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- Highlight the current line
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 -- Enable true color support (important for nice colorschemes)
 vim.opt.termguicolors = true
@@ -93,4 +97,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- Disable relative numbers in insert mode
+vim.api.nvim_create_autocmd({"InsertEnter"}, {
+  callback = function()
+    vim.opt.relativenumber = false
+  end,
+})
+
+vim.api.nvim_create_autocmd({"InsertLeave"}, {
+  callback = function()
+    vim.opt.relativenumber = true
+  end,
+})
+
 require("config.lazy")

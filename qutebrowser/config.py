@@ -29,8 +29,8 @@ c.confirm_quit = ["downloads"]
 c.content.autoplay = False
 c.scrolling.smooth = False
 
-c.aliases = {"q": "tab-close", "qa": "close", "w": "session-save", "wq": "quit --save",
-             "wqa": "quit --save"}
+c.aliases = {"q": "close", "qa": "quit", "w": "session-save", "wq": "quit --save",
+             "wqa": "quit --save", "bd": "tab-close"}
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
 # including IndexedDB, DOM storage, filesystem API, service workers, and

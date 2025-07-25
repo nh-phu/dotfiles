@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+files=(
+  ~/.bashrc
+  ~/.bash_profile
+  ~/.zshrc
+  ~/.p10k.zsh
+  ~/.zsh_history
+  ~/.gitconfig
+  ~/.tmux.conf
+  ~/.viminfo
+  ~/.khal-complete.zsh
+  ~/.config
+  ~/.gnupg
+  ~/.ssh
+  ~/.mozilla
+  ~/.zen
+  ~/Camera
+  ~/Cinematography_Doc
+  ~/Desktop
+  ~/Documents
+  ~/Français
+  ~/key_stuff
+  ~/LesPhims
+  ~/Linux_Doc
+  ~/Music
+  ~/phu
+  ~/Pictures
+  ~/Projects
+  ~/Videos
+  ~/wallpapers
+)
+
+sudo rsync -rtvh --progress --inplace --no-perms --no-owner --no-group --dry-run "${files[@]}" /mnt/ventoy

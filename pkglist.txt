@@ -26,6 +26,7 @@ code
 cowsay
 cpio
 discord
+dnsmasq
 dolphin
 dosfstools
 duf
@@ -33,6 +34,7 @@ dunst
 dust
 efibootmgr
 evtest
+exfatprogs
 eza
 fastfetch
 fcitx5
@@ -81,13 +83,16 @@ kdenlive
 khal
 kitty
 konsole
+krita
 lazygit
 lib32-gamemode
 lib32-mangohud
 lib32-pipewire-jack
 lib32-vulkan-intel
 lib32-vulkan-nouveau
+libappindicator-gtk3
 libreoffice-fresh
+libvirt
 linux
 linux-firmware
 lolcat
@@ -123,6 +128,7 @@ nvtop
 nwg-look
 obs-studio
 obsidian
+okular
 ollama-cuda
 openssh
 openssl-1.1
@@ -138,6 +144,7 @@ pulseaudio-alsa
 python-pip
 python-pynvim
 qbittorrent
+qemu-full
 qemu-user
 qpwgraph
 qutebrowser
@@ -151,6 +158,7 @@ slurp
 snap-pac
 snapper
 sof-firmware
+solaar
 speech-dispatcher
 spotify-player
 spotifyd
@@ -165,6 +173,7 @@ thermald
 thunar
 thunar-volman
 thunderbird
+tk
 tldr
 tlp
 tlp-rdw
@@ -188,6 +197,7 @@ unzip
 uwsm
 vdirsyncer
 vimix-cursors
+virt-manager
 viu
 vlc
 vlc-plugin-archive
@@ -209,6 +219,7 @@ vlc-plugins-visualization
 vulkan-intel
 vulkan-tools
 waybar
+webkit2gtk-4.1
 weechat
 wev
 wget
@@ -222,6 +233,7 @@ xcursor-vanilla-dmz
 xcursor-vanilla-dmz-aa
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
+xdotool
 xf86-video-intel
 xorg-xhost
 yazi

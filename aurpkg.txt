@@ -16,6 +16,7 @@ python-eyed3
 spotify
 ttf-all-the-icons
 vencord
+ventoy-bin
 vesktop-bin
 wlogout
 wtfutil-bin
