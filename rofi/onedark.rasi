@@ -1,0 +1,94 @@
+* {
+    /* OneDark colors */
+    bg: #282c34;
+    bg-alt: #21252b;
+    bg-selected: #3e4451;
+    fg: #abb2bf;
+    fg-alt: #5c6370;
+    red: #e06c75;
+    green: #98c379;
+    yellow: #e5c07b;
+    blue: #61afef;
+    purple: #c678dd;
+    cyan: #56b6c2;
+    orange: #d19a66;
+
+    background-color: transparent;
+    text-color: @fg;
+    font: "JetBrains Mono 12";
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 8px;
+    width: 600px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    spacing: 10px;
+    padding: 20px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 6px;
+    padding: 10px;
+    children: [prompt, entry];
+}
+
+prompt {
+    background-color: @blue;
+    color: @bg;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 0 10px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    color: @fg;
+    placeholder-color: @fg-alt;
+}
+
+listview {
+    background-color: transparent;
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    scrollbar: false;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 2px 0;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color: @blue;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 24px;
+    margin: 0 8px 0 0;
+}

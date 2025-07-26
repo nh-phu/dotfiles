@@ -54,6 +54,7 @@ fzf
 gamemode
 gimp
 git
+gnome-keyring
 gopass
 gparted
 gptfdisk
@@ -114,6 +115,7 @@ ncdu
 ncmpcpp
 neovim
 networkmanager
+nheko
 nicotine+
 noto-fonts
 noto-fonts-cjk
@@ -151,6 +153,7 @@ qutebrowser
 reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
+rofi-wayland
 rsync
 rustup
 shotcut
