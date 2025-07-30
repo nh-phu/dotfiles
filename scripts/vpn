@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [[ "$1" = "--start" ]]; then
+    sudo systemctl start systemd-resolved
+    wg-quick up wgnet0
+elif [[ "$1" = "--status" ]]; then
+    sudo wg
+elif [[ "$1" = "--stop" ]]; then
+    sudo systemctl stop systemd-resolved
+    wg-quick down wgnet0
+else
+    echo "WTF?"
+fi
