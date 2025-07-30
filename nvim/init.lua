@@ -9,6 +9,9 @@ vim.opt.gcr = "a:blinkon0"
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case sensitivity in search
 vim.opt.wrapscan = false
+for i = 1, 9 do
+  vim.keymap.set('n', '<M-' .. i .. '>', ':buffer ' .. i .. '<CR>', { silent = true, desc = "Go to buffer " .. i })
+end
 
 -- Set up basic options for Neovim
 vim.opt.colorcolumn = "80"
@@ -69,12 +72,12 @@ vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3e4452" })
 
 -- Bufferline settings
-vim.keymap.set('n', '<A-]>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<A-[>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<A-j>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<A-k>', ':BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>',
   { noremap = true, silent = true })
 vim.opt.wrap = false
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 4
 
 -- Undo
 vim.opt.undofile = true                             -- Enable persistent undo
