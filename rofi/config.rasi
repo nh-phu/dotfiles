@@ -1,6 +1,7 @@
 @import "catppuccin-macchiato"
 configuration {
-	modes: "drun,run,ssh";
+/*	modes: "drun,run,ssh,keys,filebrowser,windows";*/
+	modes: "drun,recursivebrowser,ssh,emoji";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -158,14 +159,21 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+        show-hidden: true;
+    }
+    recursivebrowser {
+        /** return 1 on cancel. */
+        cancel-returns-1: true;
+        /** filter entries using regex */
+        filter-regex: "(.*cache.*|.*\.o)";
+    }
 }
 
 //@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"

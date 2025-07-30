@@ -1,4 +1,5 @@
 7zip
+acpi
 adw-gtk-theme
 alacritty
 alsa-utils
@@ -27,7 +28,6 @@ cowsay
 cpio
 discord
 dnsmasq
-dolphin
 dosfstools
 duf
 dunst
@@ -48,6 +48,7 @@ figlet
 firefox
 flatpak
 foliate
+foot
 fortune-mod
 fprintd
 fzf
@@ -83,7 +84,6 @@ jq
 kdenlive
 khal
 kitty
-konsole
 krita
 lazygit
 lib32-gamemode
@@ -135,6 +135,7 @@ ollama-cuda
 openssh
 openssl-1.1
 os-prober
+otf-font-awesome
 pandoc-cli
 papirus-icon-theme
 pavucontrol
@@ -153,7 +154,8 @@ qutebrowser
 reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
-rofi-wayland
+rofi
+rofi-emoji
 rsync
 rustup
 shotcut
@@ -166,8 +168,6 @@ speech-dispatcher
 spotify-player
 spotifyd
 sshfs
-steam
-supertuxkart
 swappy
 systemd-resolvconf
 tectonic
@@ -186,12 +186,12 @@ tree
 ttf-dejavu
 ttf-fira-code
 ttf-firacode-nerd
-ttf-font-awesome
 ttf-hack
 ttf-hack-nerd
 ttf-hannom
 ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-nerd-fonts-symbols-mono
 tumbler
 ueberzugpp
 ufw
@@ -199,6 +199,7 @@ unp
 unzip
 uwsm
 vdirsyncer
+vi
 vimix-cursors
 virt-manager
 viu
@@ -229,7 +230,9 @@ wget
 wireguard-tools
 wireplumber
 wl-clipboard
+woff2-font-awesome
 wofi
+wtype
 xcursor-comix
 xcursor-themes
 xcursor-vanilla-dmz

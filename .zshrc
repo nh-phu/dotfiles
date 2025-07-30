@@ -11,6 +11,7 @@ fi
 
 # ─── Environment ─────────────────────────────────────────────────────────────
 export EDITOR=nvim
+export TERMINAL=foot
 export VISUAL=$EDITOR
 export MANPAGER="nvim +Man!"
 export TERMCMD='kitty'

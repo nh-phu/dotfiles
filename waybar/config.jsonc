@@ -133,7 +133,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}",
         "rotate": 0,
-        "format-muted": "\uf026",
+        "format-muted": " ",
         "on-click": "pavucontrol -t 3",
         //        "on-click-right": "~/.config/waybar/scripts/volumecontrol.sh -s ''",
         //        "on-click-middle": "~/.config/waybar/scripts/volumecontrol.sh -o m",
@@ -145,7 +145,7 @@
             "headphone": "",
             "hands-free": "",
             "headset": "",
-            "phone": "", "portable": "", "car": "", "default": ["", "", ""]
+            "phone": "", "portable": "", "car": "", "default": ["", "", ""],
         }
     },
 

@@ -8,7 +8,6 @@ hyprsysteminfo
 kotatsu-dl-git
 librespot
 localsend-bin
-osu-lazer-bin
 paru
 paru-debug
 pwvucontrol

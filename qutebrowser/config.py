@@ -28,6 +28,7 @@ c.tabs.position = "top"
 c.confirm_quit = ["downloads"]
 c.content.autoplay = False
 c.scrolling.smooth = False
+c.input.insert_mode.auto_enter = False
 
 c.aliases = {"q": "close", "qa": "quit", "w": "session-save", "wq": "quit --save",
              "wqa": "quit --save", "bd": "tab-close"}
