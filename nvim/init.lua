@@ -9,9 +9,6 @@ vim.opt.gcr = "a:blinkon0"
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case sensitivity in search
 vim.opt.wrapscan = false
-for i = 1, 9 do
-  vim.keymap.set('n', '<M-' .. i .. '>', ':buffer ' .. i .. '<CR>', { silent = true, desc = "Go to buffer " .. i })
-end
 
 -- Set up basic options for Neovim
 vim.opt.colorcolumn = "80"
@@ -66,7 +63,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Enable clipboard integration
 --vim.opt.clipboard = "unnamedplus"
-
 vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3e4452" })
@@ -91,7 +87,6 @@ if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.mkdir(undo_dir, "p")
 end
 
--- lua/config/highlight_yank.lua
 -- Highlight yanked text briefly using the Visual highlight group
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
