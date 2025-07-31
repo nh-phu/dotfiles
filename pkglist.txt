@@ -142,6 +142,7 @@ pavucontrol
 pipewire-jack
 pipewire-pulse
 pkgfile
+plocate
 poppler-glib
 pulseaudio-alsa
 python-pip
@@ -181,6 +182,8 @@ tldr
 tlp
 tlp-rdw
 tmux
+tor
+torbrowser-launcher
 trash-cli
 tree
 ttf-dejavu
