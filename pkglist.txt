@@ -118,6 +118,7 @@ neovim
 networkmanager
 nheko
 nicotine+
+niri
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -158,8 +159,8 @@ qutebrowser
 reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
-rofi
 rofi-emoji
+rofi-wayland
 rsync
 rustup
 shotcut
@@ -173,6 +174,7 @@ spotify-player
 spotifyd
 sshfs
 swappy
+swaybg
 systemd-resolvconf
 tectonic
 telegram-desktop
@@ -243,11 +245,13 @@ xcursor-comix
 xcursor-themes
 xcursor-vanilla-dmz
 xcursor-vanilla-dmz-aa
+xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdotool
 xf86-video-intel
 xorg-xhost
+xwayland-satellite
 yazi
 yt-dlp
 zathura

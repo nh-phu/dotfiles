@@ -19,7 +19,6 @@ ventoy-bin
 vesktop-bin
 wlogout
 wtfutil-bin
-xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay
 yay-debug
 zen-browser-bin
