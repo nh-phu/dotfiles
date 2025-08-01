@@ -26,7 +26,7 @@ edit = [
 ]
     
 folder = [
-  { run = 'dolphin "$@"', desc = "Open with dolphin", orphan = true, block = true, for = "unix" },
+  { run = 'thunar "$@"', desc = "Open with thunar", orphan = true, block = true, for = "unix" },
   { run = 'nvim "$@"', desc = "Edit with Neovim", orphan = true, for = "unix" },
 ]
 
@@ -40,6 +40,7 @@ document = [
 ebook = [
     { run = 'foliate "$@"', orphan = true, desc = "Read with Foliate" },
     { run = 'calibre "$@"', orphan = true, desc = "Read with Calibre" },
+    { run = 'zathura "$@"', orphan = true, desc = "View with Zathura" },
 ]
 
  # PDFs
@@ -103,6 +104,7 @@ rules = [
   { mime = "application/epub*", use = "ebook" },
   { mime = "application/x-mobipocket-ebook", use = "ebook" },
   { mime = "application/vnd.amazon.ebook", use = "ebook" },
+  { name = "*.cbz", use = "ebook" },
 
   # Documents
   { mime = "application/pdf", use = "pdf" },

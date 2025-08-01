@@ -49,6 +49,7 @@ firefox
 flatpak
 foliate
 foot
+foot-terminfo
 fortune-mod
 fprintd
 fzf
@@ -151,6 +152,8 @@ qbittorrent
 qemu-full
 qemu-user
 qpwgraph
+qt5-doc
+qt6-doc
 qutebrowser
 reflector
 riscv64-linux-gnu-binutils
@@ -248,6 +251,7 @@ xorg-xhost
 yazi
 yt-dlp
 zathura
+zathura-cb
 zathura-pdf-mupdf
 zed
 zip

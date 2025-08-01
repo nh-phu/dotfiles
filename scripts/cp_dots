@@ -8,7 +8,7 @@ dry="--dry-run"
 for i in "$HOME/dotfiles/"*/; do
     dirname=$(basename "$i")
     if [[ -d "$HOME/.config/$dirname" ]]; then
-        rsync -av $dry --progress --delete "$HOME/.config/$dirname/" "$i"
+        rsync -avh $dry --progress --delete "$HOME/.config/$dirname/" "$i"
     fi
 done
 
@@ -18,9 +18,9 @@ sed -i 's/client_id = ".*"/client_id = "" # go to https:\/\/developer.spotify.co
 pacman -Qqen > "$HOME/dotfiles/pkglist.txt"
 paru -Qqem > "$HOME/dotfiles/aurpkg.txt"
 
-rsync -av $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
-rsync -av $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
+rsync -avh $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
+rsync -avh $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
 
-rsync -av $dry --progress \
+rsync -avh $dry --progress \
   --exclude-from="$HOME/dotfiles/.gitignore" \
   "$HOME/.local/bin/" "$HOME/dotfiles/scripts/"
