@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+notify-send "⏰ $(date '+%H:%M') | 🔋 $(cat /sys/class/power_supply/BAT*/capacity)%" "$(date '+%A, %B %d %Y')"
