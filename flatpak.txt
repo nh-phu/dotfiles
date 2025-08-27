@@ -1,0 +1,4 @@
+app.zen_browser.zen
+com.brave.Browser
+dev.vencord.Vesktop
+org.localsend.localsend_app
