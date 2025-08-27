@@ -1,4 +1,4 @@
-PROMPT='[%n@%m %~]%# '
+# PROMPT='[%n@%m %~]# '
 bindkey -v
 bindkey -M vicmd -r ':'
 export EDITOR=nvim
