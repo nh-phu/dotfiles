@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+PIDS=$(pgrep -f "$HOME/.local/bin/check_bat" | grep -v $$)
+if [[ -n "$PIDS" ]]; then
+    kill $PIDS
+fi
+
 DEVICE=$(upower -e | grep battery)
 LAST_LEVEL=""
 

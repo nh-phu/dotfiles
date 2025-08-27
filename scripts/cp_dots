@@ -17,6 +17,7 @@ sed -i 's/client_id = ".*"/client_id = "" # go to https:\/\/developer.spotify.co
 
 pacman -Qqen > "$HOME/dotfiles/pkglist.txt"
 paru -Qqem > "$HOME/dotfiles/aurpkg.txt"
+flatpak list --app --columns=app >  "$HOME/dotfiles/flatpak.txt"
 
 rsync -avh $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
 rsync -avh $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
