@@ -53,6 +53,7 @@ ebook = [
 # Images
 image = [
   { run = 'imv "$@"', desc = "View in imv", orphan = true ,for = "unix"},
+  { run = 'swayimg "$@"', desc = "View in swayimg", orphan = true ,for = "unix"},
   { run = 'gimp "$@"', desc = "Edit with gimp", orphan = true ,for = "unix"},
 ]
 
@@ -102,6 +103,7 @@ rules = [
   
   # eBooks
   { mime = "application/epub*", use = "ebook" },
+  { mime = "*.epub", use = "ebook" },
   { mime = "application/x-mobipocket-ebook", use = "ebook" },
   { mime = "application/vnd.amazon.ebook", use = "ebook" },
   { name = "*.cbz", use = "ebook" },
