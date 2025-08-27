@@ -7,7 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "vim_mode": true,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "vim_mode": false,
   "ui_font_size": 15,
   "buffer_font_size": 14,
   "theme": {
