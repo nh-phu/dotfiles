@@ -69,9 +69,12 @@
             "chat": "<b></b>",
 
             // Icons by state
-            "active": "",
-            "default": ""
-        }
+            //"default": "",
+            //"active": "",
+            //"focused": "",
+        },
+        "current-only": false,
+        "all-outputs": true,
     },
 
     "niri/window": {
@@ -80,6 +83,7 @@
         "separate-outputs": true,
         "rewrite": {
             "~": "Meow 󰄛 ",
+            "foot": "foot 󰽒",
             //"phu@phu-laptop:(.*)": "$1  ",
             "(.*) — Mozilla Firefox": "$1 󰈹 ",
             "(.*)Mozilla Firefox": "Firefox 󰈹 ",
