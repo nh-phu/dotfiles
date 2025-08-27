@@ -8,6 +8,10 @@ vim.opt.mouse = "a"
 vim.opt.gcr = "a:blinkon0"
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case sensitivity in search
+vim.opt.smartindent = false
+vim.opt.autoindent = true
+vim.opt.showmode = false
+
 vim.opt.wrapscan = true
 vim.opt.swapfile = false
 
