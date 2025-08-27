@@ -14,7 +14,7 @@ export EDITOR=nvim
 export TERMINAL=foot
 export VISUAL=$EDITOR
 export MANPAGER="nvim +Man!"
-export TERMCMD='kitty'
+export TERMCMD='foot'
 
 # Input method support (Wayland/X11)
 export GTK_IM_MODULE=fcitx

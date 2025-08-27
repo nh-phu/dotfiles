@@ -1,5 +1,5 @@
 # ~/.bashrc
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+# [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
@@ -13,12 +13,11 @@ export INPUT_METHOD=default
 [[ $- != *i* ]] && return
 
 # === PATH ===
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
 
 # === BASH COMPLETION ===
-[[ -f /usr/share/bash-completion/bash_completion ]] && \
-  source /usr/share/bash-completion/bash_completion
+# [[ -f /usr/share/bash-completion/bash_completion ]] && \
+#   source /usr/share/bash-completion/bash_completion
 
 # === ble.sh (Bash Line Editor) ===
 #[[ -s ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
@@ -26,34 +25,31 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # === ble.sh Appearance Tweaks ===
 
 # Completion menu (Tab-completion popup)
-ble-face -s auto_complete             fg=240,underline=false
-ble-face -s menu_complete_match       bold
-ble-face -s menu_complete_selected    reverse
-ble-face -s menu_desc_default         none
-ble-face -s menu_desc_type            ref:syntax_delimiter
-ble-face -s menu_desc_quote           ref:syntax_quoted
-ble-face -s menu_filter_fixed         bold
-ble-face -s menu_filter_input         fg=16,bg=229
-ble-face -s command_directory         underline=false
-ble-face -s filename_directory         underline=false
-
-# Minimal .blerc
-bleopt highlight_timeout_sync=150
-bleopt highlight_timeout_async=2000
-bleopt complete_auto_delay=150
-
+# ble-face -s auto_complete             fg=240,underline=false
+# ble-face -s menu_complete_match       bold
+# ble-face -s menu_complete_selected    reverse
+# ble-face -s menu_desc_default         none
+# ble-face -s menu_desc_type            ref:syntax_delimiter
+# ble-face -s menu_desc_quote           ref:syntax_quoted
+# ble-face -s menu_filter_fixed         bold
+# ble-face -s menu_filter_input         fg=16,bg=229
+# ble-face -s command_directory         underline=false
+# ble-face -s filename_directory         underline=false
+#
+# # Minimal .blerc
+# bleopt highlight_timeout_sync=150
+# bleopt highlight_timeout_async=2000
+# bleopt complete_auto_delay=150
+#
 # === FZF ===
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+# [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 # === PROMPT ===
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
 # === ALIASES ===
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias vim='nvim'
-alias neovim='nvim'
-alias spotify-player='spotify_player'
 HISTSIZE=10000                    # Commands to remember in memory
 HISTFILESIZE=20000               # Commands to save in history file
 HISTCONTROL=ignoreboth:erasedups # Ignore duplicates and commands starting with space
@@ -90,6 +86,6 @@ function y() {
 }
 
 
-[[ ! ${BLE_VERSION-} ]] || ble-attach
-
-source /home/puchan/.config/broot/launcher/bash/br
+# [[ ! ${BLE_VERSION-} ]] || ble-attach
+#
+# source /home/puchan/.config/broot/launcher/bash/br

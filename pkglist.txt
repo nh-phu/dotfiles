@@ -4,6 +4,8 @@ adw-gtk-theme
 alacritty
 alsa-utils
 appmenu-gtk-module
+arch-wiki-docs
+arch-wiki-lite
 aspell
 base
 base-devel
@@ -47,6 +49,7 @@ ffmpegthumbnailer
 figlet
 firefox
 flatpak
+flatpak-builder
 foliate
 foot
 foot-terminfo
@@ -114,6 +117,7 @@ mpv
 mtools
 ncdu
 ncmpcpp
+ncspot
 neovim
 networkmanager
 nheko
@@ -138,9 +142,11 @@ openssh
 openssl-1.1
 os-prober
 otf-font-awesome
+pacman-contrib
 pandoc-cli
 papirus-icon-theme
 pavucontrol
+perl-image-exiftool
 pipewire-jack
 pipewire-pulse
 pkgfile
@@ -173,8 +179,10 @@ speech-dispatcher
 spotify-player
 spotifyd
 sshfs
+superfile
 swappy
 swaybg
+swayimg
 systemd-resolvconf
 tectonic
 telegram-desktop
@@ -207,7 +215,6 @@ unp
 unzip
 uwsm
 vdirsyncer
-vi
 vimix-cursors
 virt-manager
 viu
@@ -235,6 +242,10 @@ webkit2gtk-4.1
 weechat
 wev
 wget
+wine
+wine-gecko
+wine-mono
+winetricks
 wireguard-tools
 wireplumber
 wl-clipboard
