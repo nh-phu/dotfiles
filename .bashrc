@@ -16,11 +16,12 @@ export INPUT_METHOD=default
 # export PATH="$HOME/.cargo/bin:$PATH"
 
 # === BASH COMPLETION ===
-# [[ -f /usr/share/bash-completion/bash_completion ]] && \
-#   source /usr/share/bash-completion/bash_completion
+[[ -f /usr/share/bash-completion/bash_completion ]] && \
+  source /usr/share/bash-completion/bash_completion
 
 # === ble.sh (Bash Line Editor) ===
 #[[ -s ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
+source /usr/share/blesh/ble.sh
 
 # === ble.sh Appearance Tweaks ===
 
@@ -89,3 +90,6 @@ function y() {
 # [[ ! ${BLE_VERSION-} ]] || ble-attach
 #
 # source /home/puchan/.config/broot/launcher/bash/br
+
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"

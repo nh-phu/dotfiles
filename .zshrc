@@ -44,7 +44,7 @@ alias neovim='nvim'
 alias rm='rm -i'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
-alias :q='exit'
+# alias :q='exit'
 alias cat='bat'
 alias clock='tty-clock -csS'
 

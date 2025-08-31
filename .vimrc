@@ -1,0 +1,68 @@
+" Minimal utilitarian Vim config
+" ==============================
+
+" Essential settings only
+set nocompatible
+set backspace=indent,eol,start
+set history=50
+set ruler
+set showcmd
+set incsearch
+set hlsearch
+
+" Indentation - kernel style
+set tabstop=8
+set shiftwidth=8
+set noexpandtab
+
+" Line numbers and basic visual aids
+set number
+set rnu
+set showmatch
+
+" No swap files, they're annoying
+set noswapfile
+
+" Syntax highlighting
+syntax on
+filetype plugin indent on
+
+" Persistent undo
+set undofile
+set undodir=~/.vim/undo
+if !isdirectory(&undodir)
+    call mkdir(&undodir, "p")
+endif
+
+" Key mappings - minimal and practical
+nnoremap :W :w
+nnoremap :Q :q
+
+" Search improvements
+set ignorecase
+set smartcase
+
+" Don't wrap lines
+set nowrap
+
+" Highlight current line number only (not the whole line)
+set cursorline
+set cursorlineopt=number
+set colorcolumn=80
+
+" Mouse support
+set mouse=a
+
+" Better command completion
+set wildmenu
+
+" Status line always visible
+set laststatus=2
+
+" No annoying beeps
+set visualbell
+set t_vb=
+
+" File type specific settings
+autocmd FileType c,cpp setlocal cindent
+autocmd FileType make setlocal noexpandtab

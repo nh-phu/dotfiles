@@ -21,6 +21,8 @@ flatpak list --app --columns=app >  "$HOME/dotfiles/flatpak.txt"
 
 rsync -avh $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
 rsync -avh $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
+rsync -avh $dry --progress "$HOME/.vimrc" "$HOME/dotfiles/.vimrc"
+rsync -avh $dry --progress "$HOME/.tmux.conf" "$HOME/dotfiles/.tmux.conf"
 
 rsync -avh $dry --progress \
   --exclude-from="$HOME/dotfiles/.gitignore" \

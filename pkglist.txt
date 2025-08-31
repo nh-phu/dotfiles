@@ -57,7 +57,6 @@ fortune-mod
 fprintd
 fzf
 gamemode
-gimp
 git
 gnome-keyring
 gopass
@@ -84,11 +83,13 @@ imv
 inetutils
 inotify-tools
 intel-ucode
+inxi
 jq
 kdenlive
 khal
+kid3
 kitty
-krita
+kolourpaint
 lazygit
 lib32-gamemode
 lib32-mangohud
@@ -116,7 +117,6 @@ mpd
 mpv
 mtools
 ncdu
-ncmpcpp
 ncspot
 neovim
 networkmanager
@@ -153,6 +153,7 @@ pkgfile
 plocate
 poppler-glib
 pulseaudio-alsa
+python-mutagen
 python-pip
 python-pynvim
 qbittorrent
@@ -165,6 +166,7 @@ qutebrowser
 reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
+rmpc
 rofi-emoji
 rofi-wayland
 rsync
@@ -176,9 +178,11 @@ snapper
 sof-firmware
 solaar
 speech-dispatcher
+spotify-launcher
 spotify-player
 spotifyd
 sshfs
+starship
 superfile
 swappy
 swaybg

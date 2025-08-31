@@ -3,6 +3,7 @@ return {
         tag = '0.1.8',
         lazy = true,
         priority = 500,
+        event = "VeryLazy",
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-treesitter/nvim-treesitter',

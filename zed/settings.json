@@ -19,9 +19,9 @@
     "dark": "One Dark"
   },
   "confirm_quit": true,
-  "cursor_blink": false,
-  "cursor_shape": "block",
-  "relative_line_numbers": true,
+  "cursor_blink": true,
+  "cursor_shape": null,
+  "relative_line_numbers": false,
   "vim": {
     "use_system_clipboard": "on_yank",
     "use_smartcase_find": true
