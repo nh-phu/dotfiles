@@ -9,7 +9,7 @@
         "custom/separator",
         "niri/workspaces",
         "custom/separator",
-        "custom/spotify",
+        // "custom/spotify",
         "tray"
     ],
     "modules-center": ["niri/window"],
@@ -27,12 +27,12 @@
         "icon-size": 16,
         "spacing": 8
     },
-    "custom/spotify": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/spotify-info.sh",
-        "interval": 2,
-        //    "on-click": "~/.config/waybar/scripts/spotify-widget.sh"
-    },
+    // "custom/spotify": {
+    //     "format": "{}",
+    //     "exec": "~/.config/waybar/scripts/spotify-info.sh",
+    //     "interval": 2,
+    //     //    "on-click": "~/.config/waybar/scripts/spotify-widget.sh"
+    // },
     "clock": {
         "format": "{:%R}",
         "rotate": 0,
@@ -70,8 +70,8 @@
 
             // Icons by state
             //"default": "",
-            //"active": "",
-            //"focused": "",
+            // "active": "",
+            // "focused": "",
         },
         "current-only": false,
         "all-outputs": true,
