@@ -7,8 +7,7 @@ return
 
     require("bufferline").setup({
       options = {
-        cycle = false,
-        warps = false,
+        move_warps_at_ends = false,
         mode = "buffers",
         numbers = "ordinal",
         always_show_bufferline = true,

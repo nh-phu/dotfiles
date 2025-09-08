@@ -1,24 +1,19 @@
 return {
   -- Mason (LSP installer) - should come first
-  { "williamboman/mason.nvim", build = ":MasonUpdate", config = true },
+  --[[ { "williamboman/mason.nvim", build = ":MasonUpdate", config = true },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls",                 -- Lua
-          -- "clangd",                 -- C/C++
-          "pyright",                -- Python (or "pylsp" for alternative)
-          "bashls",                 -- Bash
-          "rust_analyzer"           -- Rust
         },
         automatic_installation = true,
       })
     end
-  },
+  }, ]]
 
   -- LSP Setup (language servers)
-  {
+  --[[ {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
@@ -85,7 +80,7 @@ return {
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-          vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, opts)
+          -- vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, opts)
           vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', 'gR', vim.lsp.buf.references, opts)
           vim.keymap.set('n', '<leader>F', function()
@@ -94,7 +89,7 @@ return {
         end,
       })
     end
-  },
+  }, ]]
 
   -- Autocompletion with Copilot integration
   {

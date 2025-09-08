@@ -16,7 +16,8 @@ return {
           },
         },
         suggestion = {
-          enabled = false,           -- disable inline suggestions to avoid conflicts with nvim-cmp
+          enabled = true,
+          -- disable inline suggestions to avoid conflicts with nvim-cmp
           auto_trigger = false,
         },
         filetypes = {

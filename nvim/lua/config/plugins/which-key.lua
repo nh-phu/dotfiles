@@ -39,11 +39,12 @@ return{
       
       -- LSP group
       { "<leader>l", group = "LSP" },
-      { "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
-      { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+      -- { "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
+      -- { "<leader>lr", "<cmd>LspRestart<cr>", desc = "Restart LSP" },
       { "<leader>lf", function() vim.lsp.buf.format { async = true } end,
         desc = "Format" },
-      { "<leader>ld", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
+      { "<leader>ld",vim.lsp.buf.definition , desc = "Definitions" },
+      { "<leader>lD",vim.lsp.buf.declaration , desc = "Declaration" },
       { "<leader>lR", "<cmd>Telescope lsp_references<cr>", desc = "References" },
       { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",
         desc = "Document Symbols" },

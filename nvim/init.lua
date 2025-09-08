@@ -4,11 +4,11 @@ vim.opt.termguicolors = true -- enable true color support
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 --vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
-vim.opt.mouse = "a"
+vim.opt.mouse = "a";
 vim.opt.gcr = "a:blinkon0"
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case sensitivity in search
-vim.opt.smartindent = false
+vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.showmode = false
 
@@ -115,3 +115,18 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
 })
 
 require("config.lazy")
+vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copilot'})
+-- LSP completion trigger
+
+--[[ vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
+      vim.keymap.set('i', '<c-space>', function()
+        vim.lsp.completion.get()
+      end)
+    end
+  end,
+}) ]]
