@@ -10,7 +10,7 @@ pj() {
   nvim .
 }
 
-config() {
+cf() {
   cd ~/.config/"$(ls ~/.config | fzf)" 2>/dev/null || return
   nvim .
 }

@@ -40,13 +40,14 @@ setopt HIST_REDUCE_BLANKS
 # ─── Aliases ─────────────────────────────────────────────────────────────────
 alias ls='ls --color=auto' 
 alias grep='grep --color=auto'
-alias neovim='nvim'
+alias vim='nvim'
 alias rm='rm -i'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
 # alias :q='exit'
 alias cat='bat'
 alias clock='tty-clock -csS'
+alias batman='man bat'
 
 # ─── Bindings ───────────────────────────────────────────────────────────────
 # When in menu-select mode (visual menu):

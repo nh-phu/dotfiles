@@ -10,6 +10,7 @@ aspell
 base
 base-devel
 bash-completion
+bash-language-server
 bat
 bluez
 bluez-deprecated-tools
@@ -32,7 +33,6 @@ discord
 dnsmasq
 dosfstools
 duf
-dunst
 dust
 efibootmgr
 evtest
@@ -57,6 +57,7 @@ fortune-mod
 fprintd
 fzf
 gamemode
+gdu
 git
 gnome-keyring
 gopass
@@ -68,7 +69,6 @@ grub-btrfs
 gtk-engine-murrine
 gvfs
 gvfs-mtp
-gvim
 helvum
 highlight
 htop
@@ -89,7 +89,9 @@ kdenlive
 khal
 kid3
 kitty
+kmines
 kolourpaint
+krita
 lazygit
 lib32-gamemode
 lib32-mangohud
@@ -117,7 +119,7 @@ mpd
 mpv
 mtools
 ncdu
-ncspot
+neovide
 neovim
 networkmanager
 nheko
@@ -153,6 +155,7 @@ pkgfile
 plocate
 poppler-glib
 pulseaudio-alsa
+pyright
 python-mutagen
 python-pip
 python-pynvim
@@ -167,19 +170,20 @@ reflector
 riscv64-linux-gnu-binutils
 riscv64-linux-gnu-gcc
 rmpc
+rofi
 rofi-emoji
-rofi-wayland
 rsync
 rustup
 shotcut
+signal-desktop
 slurp
+smartmontools
 snap-pac
 snapper
 sof-firmware
 solaar
 speech-dispatcher
 spotify-launcher
-spotify-player
 spotifyd
 sshfs
 starship
@@ -219,6 +223,7 @@ unp
 unzip
 uwsm
 vdirsyncer
+vim
 vimix-cursors
 virt-manager
 viu
