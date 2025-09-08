@@ -276,18 +276,18 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar" "-c" "/home/puchan/.config/waybar/niribar.jsonc"
-spawn-at-startup "~/.local/bin/niri-wallpaper-start"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store"
+spawn-sh-at-startup "waybar -c /home/puchan/.config/waybar/niribar.jsonc"
+spawn-sh-at-startup "~/.local/bin/niri-wallpaper-start"
+// spawn-at-startup "xwayland-satellite"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
-spawn-at-startup "~/.local/bin/check_bat"
+spawn-sh-at-startup "~/.local/bin/check_bat"
 prefer-no-csd
 
-environment {
+/* environment {
     DISPLAY ":0"
-}
+} */
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -309,7 +309,7 @@ screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -418,12 +418,13 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+RETURN repeat=false { spawn "foot"; }
-    Mod+SPACE repeat=false { spawn "rofi" "-show" "drun"; }
+    Mod+SPACE repeat=false { spawn-sh "rofi -show drun"; }
+    Menu repeat=false { spawn-sh "rofi -show drun"; }
     // Mod+E repeat=false { spawn "thunar"; }
     //Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+W repeat=false { spawn "bash" "-c" "killall -SIGUSR1 waybar";}
-    Mod+V { spawn "bash" "-c" "cliphist list| rofi -dmenu | cliphist decode | wl-copy"; }
-    Mod+D repeat=false { spawn "bash" "-c" "~/.local/bin/stats"; }
+    Mod+W repeat=false { spawn-sh "killall -SIGUSR1 waybar";}
+    Mod+V { spawn-sh "cliphist list| rofi -dmenu | cliphist decode | wl-copy"; }
+    Mod+D repeat=false { spawn-sh "~/.local/bin/stats"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -432,13 +433,13 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl set +5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl set 5%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -648,6 +649,7 @@ binds {
 
     Print { screenshot; }
     Mod+S { screenshot; }
+    Mod+Shift+S { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
