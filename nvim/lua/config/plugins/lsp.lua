@@ -93,6 +93,10 @@ return {
 
   -- Autocompletion with Copilot integration
   {
+    "mfussenegger/nvim-jdtls",
+    -- event = "VeryLazy",
+  },
+  {
     "hrsh7th/nvim-cmp",
     event = "VeryLazy",
     dependencies = {
