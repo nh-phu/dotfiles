@@ -1,10 +1,9 @@
 ani-cli
 blesh-git
-calcure
 catppuccin-gtk-theme-mocha
-grimblast-git
-hyprsysteminfo
+jdtls
 kotatsu-dl-git
+opencode-bin
 paru
 paru-debug
 pwvucontrol
