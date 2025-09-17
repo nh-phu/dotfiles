@@ -122,7 +122,7 @@
     },
     "memory": {
         "format": "󰫗 {}% ",
-        "on-click": "kitty -e btop",
+        "on-click": "foot -e btop",
         "tooltip": "false"
     },
     "cpu": {
