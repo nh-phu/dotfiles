@@ -73,8 +73,9 @@ vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#363944" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3e4452" })
 
 -- Bufferline settings
-vim.keymap.set('n', '<A-j>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<A-k>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<A-j>', '<cmd>bnext<cr>', { silent = true })
+vim.keymap.set('n', '<A-k>', '<cmd>bprev<cr>', { silent = true })
+vim.keymap.set('n', '<A-Tab>', '<cmd>b#<cr>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>',
   { noremap = true, silent = true })
 vim.opt.wrap = false
@@ -102,7 +103,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Disable relative numbers in insert mode
-vim.api.nvim_create_autocmd({"InsertEnter"}, {
+--[[ vim.api.nvim_create_autocmd({"InsertEnter"}, {
   callback = function()
     vim.opt.relativenumber = false
   end,
@@ -112,10 +113,10 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
   callback = function()
     vim.opt.relativenumber = true
   end,
-})
+}) ]]
 
 require("config.lazy")
-vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copilot'})
+vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copilot', 'jdtls'})
 -- LSP completion trigger
 
 --[[ vim.api.nvim_create_autocmd('LspAttach', {
@@ -130,3 +131,14 @@ vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copil
     end
   end,
 }) ]]
+
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = false
+
+  -- Alternatively, customize specific options
+  -- virtual_lines = {
+  --  -- Only show virtual line diagnostics for the current cursor line
+  --  current_line = true,
+  -- },
+})
