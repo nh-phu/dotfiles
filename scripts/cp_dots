@@ -20,7 +20,11 @@ paru -Qqem > "$HOME/dotfiles/aurpkg.txt"
 flatpak list --app --columns=app >  "$HOME/dotfiles/flatpak.txt"
 
 rsync -avh $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
+rsync -avh $dry --progress "$HOME/.bash_profile" "$HOME/dotfiles/.bash_profile"
+rsync -avh $dry --progress "$HOME/.bash_history" "$HOME/dotfiles/.bash_history"
 rsync -avh $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
+rsync -avh $dry --progress "$HOME/.zsh_history" "$HOME/dotfiles/.zsh_history"
+rsync -avh $dry --progress "$HOME/.p10k.zsh" "$HOME/dotfiles/.p10k.zsh"
 rsync -avh $dry --progress "$HOME/.vimrc" "$HOME/dotfiles/.vimrc"
 rsync -avh $dry --progress "$HOME/.tmux.conf" "$HOME/dotfiles/.tmux.conf"
 
