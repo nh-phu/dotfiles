@@ -14,13 +14,13 @@
     ],
     "modules-center": ["niri/window"],
     "modules-right": [
-        "temperature",
+        // "temperature",
         "memory",
         "cpu",
         "pulseaudio",
         "battery",
         "network",
-        "custom/separator",
+        // "custom/separator",
         "custom/powermenu"
     ],
     "tray": {
@@ -137,11 +137,28 @@
         "tooltip": "false"
     },
 
+    // "wireplumber": {
+    //     "format": "{icon} {volume}%",
+    //     "format-muted": " ",
+    //     // "format-source": "{source_volume}% ",
+    //     // "format-source-muted": " ",
+    //     "max-volume": 150,
+    //     "scroll-step": 5,
+    //     "tooltip-format": "{icon} {desc}:{volume}%",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "hands-free": "",
+    //         "headset": "",
+    //         "phone": "", "portable": "", "car": "", "default": ["", "", ""],
+    //     },
+    //     "on-click": "helvum",
+    // },
+
     "pulseaudio": {
         "format": "{icon} {volume}",
         "rotate": 0,
         "format-muted": " ",
-        "on-click": "pavucontrol -t 3",
+        "on-click": "pwvucontrol",
         //        "on-click-right": "~/.config/waybar/scripts/volumecontrol.sh -s ''",
         //        "on-click-middle": "~/.config/waybar/scripts/volumecontrol.sh -o m",
         //        "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",

@@ -17,6 +17,7 @@ image_filter = "triangle"
 image_quality = 50
 sixel_fraction = 15
 image_delay = 50
+ueberzug_enabled = true
 
 [opener]
 # Text files

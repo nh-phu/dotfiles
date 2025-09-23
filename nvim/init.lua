@@ -94,11 +94,33 @@ if vim.fn.isdirectory(undo_dir) == 0 then
 end
 
 -- Highlight yanked text briefly using the Visual highlight group
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   desc = "Highlight when yanking text",
+--   group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+--   callback = function()
+--     vim.hl.on_yank()
+--   end,
+-- })
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
+
+-- Check if we need to reload the file when it changed
+vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+  group = augroup("checktime"),
   callback = function()
-    vim.hl.on_yank()
+    if vim.o.buftype ~= "nofile" then
+      vim.cmd("checktime")
+    end
+  end,
+})
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("highlight_yank"),
+  callback = function()
+    (vim.hl or vim.highlight).on_yank()
   end,
 })
 

@@ -146,3 +146,6 @@ y
 z dot
 cp_dots --real
 nvim .
+broot
+br 
+pgrep hypr

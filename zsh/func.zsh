@@ -7,7 +7,7 @@ alias cdz='fdcd'
 
 pj() {
   cd ~/Projects/"$(ls ~/Projects | fzf)" 2>/dev/null || return
-  nvim .
+  # nvim .
 }
 
 cf() {

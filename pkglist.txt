@@ -16,6 +16,7 @@ bluez
 bluez-deprecated-tools
 bluez-utils
 brightnessctl
+broot
 btop
 btrfs-progs
 calcurse
@@ -34,6 +35,7 @@ dnsmasq
 dosfstools
 doxygen
 duf
+dunst
 dust
 efibootmgr
 electron37
@@ -61,6 +63,7 @@ fprintd
 fzf
 gamemode
 gdu
+ghostty
 git
 glib2-devel
 gnome-keyring
@@ -78,8 +81,10 @@ gvfs-mtp
 helvum
 highlight
 htop
+hwinfo
 hyperfine
 hyprland
+hyprlock
 hyprpaper
 hyprpicker
 hyprpolkitagent
@@ -99,6 +104,7 @@ kmines
 kolourpaint
 krita
 lazygit
+lf
 lib32-gamemode
 lib32-gnutls
 lib32-gst-plugins-base-libs
@@ -202,13 +208,16 @@ spotify-launcher
 spotifyd
 sshfs
 starship
+steam
 superfile
+sushi
 swaybg
 swayimg
 systemd-resolvconf
 tectonic
 telegram-desktop
 thermald
+thunar-volman
 thunderbird
 tk
 tldr
@@ -219,6 +228,7 @@ tor
 torbrowser-launcher
 trash-cli
 tree
+tree-sitter-cli
 ttf-dejavu
 ttf-fira-code
 ttf-firacode-nerd
@@ -271,6 +281,7 @@ wine-gecko
 wine-mono
 winetricks
 wireguard-tools
+wiremix
 wireplumber
 wl-clipboard
 woff2-font-awesome

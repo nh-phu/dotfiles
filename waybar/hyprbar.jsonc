@@ -9,12 +9,11 @@
         "custom/separator",
         "hyprland/workspaces",
         "custom/separator",
-        // "custom/spotify",
         "tray"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        "temperature",
+        // "temperature",
         "memory",
         "cpu",
         "pulseaudio",
@@ -27,12 +26,7 @@
         "icon-size": 16,
         "spacing": 8
     },
-    // "custom/spotify": {
-    //     "format": "{}",
-    //     "exec": "~/.config/waybar/scripts/spotify-info.sh",
-    //     "interval": 2,
-    //     //    "on-click": "~/.config/waybar/scripts/spotify-widget.sh"
-    // },
+
     "clock": {
         "format": "{:%R}",
         "rotate": 0,
@@ -134,7 +128,7 @@
         "format": "{icon} {volume}",
         "rotate": 0,
         "format-muted": " ",
-        "on-click": "pavucontrol -t 3",
+        "on-click": "pwvucontrol",
         //        "on-click-right": "~/.config/waybar/scripts/volumecontrol.sh -s ''",
         //        "on-click-middle": "~/.config/waybar/scripts/volumecontrol.sh -o m",
         //        "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",

@@ -73,7 +73,6 @@ return {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
   diagnostics = {
-    globals = { 'vim' },
   },
   root_markers = {
     '.luarc.json',

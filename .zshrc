@@ -46,7 +46,7 @@ alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
 # alias :q='exit'
 alias cat='bat'
-alias clock='tty-clock -csS'
+# alias clock='tty-clock -csS'
 alias batman='man bat'
 
 # ─── Bindings ───────────────────────────────────────────────────────────────
@@ -88,3 +88,5 @@ source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source /home/puchan/.config/broot/launcher/bash/br

@@ -93,3 +93,5 @@ function y() {
 
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+
+source /home/puchan/.config/broot/launcher/bash/br
