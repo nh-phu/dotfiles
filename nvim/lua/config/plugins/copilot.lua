@@ -10,8 +10,8 @@ return {
           auto_refresh = true,
           keymap = {
             accept = "<C-f>",
-            next = "<C-]>",
-            prev = "<C-[>",
+            next = "<C-n>",
+            prev = "<C-p>",
             dismiss = "<C-\\>",
           },
         },
