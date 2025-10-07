@@ -1,4 +1,4 @@
-set selection-clipboard clipboard
+# set selection-clipboard clipboard
 set guioptions sv
 
 set recolor false

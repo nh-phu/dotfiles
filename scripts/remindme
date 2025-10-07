@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-while [ "$(date +%H:%M)" != "$1" ]; do
-    sleep 5
-done
-notify-send "REMIND" "$2"

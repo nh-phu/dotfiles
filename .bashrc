@@ -52,6 +52,7 @@ source /usr/share/blesh/ble.sh
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 HISTSIZE=10000                    # Commands to remember in memory
+HISTFILE=~/.histfile
 HISTFILESIZE=20000               # Commands to save in history file
 HISTCONTROL=ignoreboth:erasedups # Ignore duplicates and commands starting with space
 shopt -s histappend              # Append to history instead of overwriting

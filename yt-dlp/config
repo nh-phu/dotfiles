@@ -1,7 +1,7 @@
 # Save in ~/Videos/yt-dlp
 # -o ~/Videos/yt-dlp/%(title)s.%(ext)s
 # --cookies ~/.config/yt-dlp/youtube.com.cookies.txt
---cookies-from-browser firefox
+--cookies-from-browser chromium
 # # Prefer 1080p video with good audio (but avoid AV1 if file size matters)
 # -f "bv*[height<=1080][vcodec!*=av01]+ba/b[height<=1080]"
 #

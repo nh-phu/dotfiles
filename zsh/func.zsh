@@ -6,13 +6,13 @@ fdcd() {
 alias cdz='fdcd'
 
 pj() {
-  cd ~/Projects/"$(ls ~/Projects | fzf)" 2>/dev/null || return
+  cd ~/Projects/"$(\ls ~/Projects | fzf)" 2>/dev/null || return
   # nvim .
 }
 
 cf() {
-  cd ~/.config/"$(ls ~/.config | fzf)" 2>/dev/null || return
-  nvim .
+  cd ~/.config/"$(\ls ~/.config | fzf)" 2>/dev/null || return
+  nvim
 }
 
 y() {

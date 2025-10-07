@@ -7,7 +7,8 @@
 [colors]
 cursor=111111 cccccc
 #background=000000
-background=282c34
+#background=282c34
+background=1F2329
 foreground=ffffff
 #foreground=979eab
 regular0=282c34   # black

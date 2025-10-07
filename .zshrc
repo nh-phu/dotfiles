@@ -27,9 +27,9 @@ export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # ─── History Settings ────────────────────────────────────────────────────────
+HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=20000
-HISTFILE=~/.zsh_history
 
 setopt HIST_IGNORE_ALL_DUPS      # no duplicates
 setopt HIST_IGNORE_SPACE         # no space
@@ -41,6 +41,7 @@ setopt HIST_REDUCE_BLANKS
 alias ls='ls --color=auto' 
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias vi='nvim'
 alias rm='rm -i'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'

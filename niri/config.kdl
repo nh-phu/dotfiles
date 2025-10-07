@@ -40,8 +40,9 @@ input {
     mouse {
         // off
         // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+        accel-speed -1
+        accel-profile "adaptive"
+        scroll-factor 1
         // scroll-method "no-scroll"
     }
 
@@ -79,7 +80,8 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@144.149"
+    mode "1920x1080"
+    // mode "1920x1080@144.149"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -128,9 +130,9 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.4
         proportion 0.5
-        proportion 0.6
+        proportion 0.25
+        // proportion 0.3
 
         // Fixed sets the width in logical pixels exactly.
         //fixed 1920
@@ -233,7 +235,7 @@ layout {
         // window. These will also remove client-side shadows if the window
         // draws any.
         // 
-        draw-behind-window true
+        draw-behind-window false
 
         // You can change how shadows look. The values below are in logical
         // pixels and match the CSS box-shadow properties.
@@ -281,10 +283,11 @@ spawn-sh-at-startup "waybar -c /home/puchan/.config/waybar/niribar.jsonc"
 spawn-sh-at-startup "~/.local/bin/niri-wallpaper-start"
 // spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-at-startup "mako"
+spawn-at-startup "dunst"
 spawn-at-startup "fcitx5"
-spawn-sh-at-startup "setxkbmap -option caps:escape" 
-// spawn-at-startup "kitty" "-e" "sh" "-c" "setxkbmap" "-option" "caps:escape" 
+spawn-sh-at-startup "~/.local/bin/capscape"
+// spawn-sh-at-startup "setxkbmap -option caps:escape" 
+// spawn-sh-at-startup "kitty -e setxkbmap -option caps:escape"
 spawn-sh-at-startup "~/.local/bin/check_bat"
 prefer-no-csd
 
@@ -338,12 +341,15 @@ window-rule {
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
-/-window-rule {
+window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+    default-column-width { fixed 500; }
+    default-window-height { fixed 290; }
+    default-floating-position x=1400 y=760 relative-to="top-left"
 }
 
 // Example: block out two password managers from screen capture.
@@ -366,29 +372,26 @@ window-rule {
 }
 
 window-rule {
-    match app-id="thunderbird"
-    default-column-width { proportion 1.0; }
-}
-
-window-rule {
-    match app-id="com.gabm.satty"
-    open-floating true
-    open-focused true
-    default-column-width { fixed 1000; }
-    default-window-height { fixed 750; }
-}
-
-window-rule {
     match app-id="alacritty"
-    draw-border-with-background false
+    draw-border-with-background true
     tiled-state true
 }
 
 window-rule {
     match app-id="Tor Browser"
-    //open-maximized false
+    match app-id="thunderbird"
+    match app-id="krita"
+    match app-id="vlc"
+    match app-id="mpv"
+    match app-id="obsidian"
+    match app-id="spotify_player"
+    match app-id="chrome-ailpjlcpaakbflcaodphfgngeplfkldn-Profile_2"
+    match app-id="chrome-moodle.usth.edu.vn__-Profile_2"
+    match app-id="chrome-erp.usth.edu.vn__students_learn_timetable-Profile_2"
+
+    open-maximized true
     //open-fullscreen false
-    default-column-width { proportion 1.0; }
+    // default-column-width { proportion 1.0; }
     //default-window-height { proportion 1.0; }
     // min-width 100
     // min-height 170
@@ -396,25 +399,27 @@ window-rule {
 
 window-rule {
     match app-id="com.saivert.pwvucontrol"
-    open-floating true
-    default-column-width { fixed 1000; }
-    default-window-height { fixed 800; }
-    open-focused true
-}
-
-window-rule {
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="wiremix"
+
+    match app-id="com.gabm.satty" // the screenshot edit
+
     open-floating true
+    open-focused true
+
     default-column-width { fixed 1000; }
     default-window-height { fixed 800; }
-    open-focused true
 }
 
 overview {
+    backdrop-color "#1a1b26"
     zoom 0.65
-    backdrop-color "#777777"
-/-    workspace-shadow {
-        off
+    // backdrop-color "#777777"
+    workspace-shadow {
+        softness 50
+        spread 20
+        offset x=0 y=10
+        color "#0007"
     }
 }
 
@@ -443,6 +448,7 @@ binds {
     Mod+RETURN repeat=false { spawn "alacritty"; }
     Mod+SPACE repeat=false { spawn-sh "rofi -show drun"; }
     Menu repeat=false { spawn-sh "rofi -show drun"; }
+    Mod+N repeat=false {spawn-sh "dunstctl history-pop";}
     // Mod+E repeat=false { spawn "thunar"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     Mod+W repeat=false { spawn-sh "killall -SIGUSR1 waybar";}
@@ -456,13 +462,18 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    // XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    // XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    // XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "~/.local/bin/volumecontrol i 5"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "~/.local/bin/volumecontrol d 5"; }
+    XF86AudioMute         allow-when-locked=true { spawn-sh "~/.local/bin/volumecontrol m"; }
     XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl set +5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl set 5%-"; }
+    // XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl set +5%"; }
+    // XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl set 5%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "~/.local/bin/brightnesscontrol i 5"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/.local/bin/brightnesscontrol d 5"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -671,7 +682,6 @@ binds {
     Mod+I { switch-layout "prev"; }
 
     Print { spawn-sh "~/.local/bin/screenshot"; }
-    Mod+S { spawn-sh "~/.local/bin/screenshot"; }
     Mod+Shift+S { spawn-sh "~/.local/bin/screenshot"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }

@@ -1,13 +1,13 @@
-vim.o.updatetime = 50        -- reduce update time to 300ms
-vim.opt.termguicolors = true -- enable true color support
+vim.o.updatetime = 50
+vim.opt.termguicolors = true
 --set keymap for common actions
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 --vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a";
 vim.opt.gcr = "a:blinkon0"
-vim.opt.ignorecase = true -- ignore case in search patterns
-vim.opt.smartcase = true -- smart case sensitivity in search
+vim.opt.ignorecase = false
+vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.showmode = false
@@ -18,34 +18,27 @@ vim.opt.swapfile = false
 -- Set up basic options for Neovim
 vim.opt.colorcolumn = "80"
 
--- Show absolute line numbers + relative numbers (relative is handy for motions)
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Highlight the current line
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorlineopt = "number"
 
--- Enable true color support (important for nice colorschemes)
 vim.opt.termguicolors = true
 
--- Set status line style (basic)
-vim.opt.laststatus = 3 -- global statusline
+vim.opt.laststatus = 2
 
--- Show matching brackets instantly
-vim.opt.showmatch = true
+vim.opt.showmatch = false
 
--- Highlight search results
 vim.opt.hlsearch = true
 
--- Incremental search as you type
 vim.opt.incsearch = true
 
 -- Use a nice default tab width
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true -- spaces instead of tabs
+vim.opt.expandtab = true
 vim.opt.showmode = false
 
 -- File type specific indentation
