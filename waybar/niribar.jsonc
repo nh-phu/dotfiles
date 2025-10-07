@@ -5,14 +5,15 @@
     //  "margin" : 32,
     "margin-bottom": 0,
     "modules-left": [
-        "clock",
+        // "clock",
         "custom/separator",
         "niri/workspaces",
         "custom/separator",
         // "custom/spotify",
         "tray"
     ],
-    "modules-center": ["niri/window"],
+    // "modules-center": ["niri/window"],
+    "modules-center": ["clock"],
     "modules-right": [
         // "temperature",
         "memory",
@@ -34,10 +35,13 @@
     //     //    "on-click": "~/.config/waybar/scripts/spotify-widget.sh"
     // },
     "clock": {
-        "format": "{:%R}",
+        //  "format": "{:%R}",
+        // "format": "{:%e %B %H:%M}", // niri
+        "format": "{:L%A %H:%M}", // omarchy
         "rotate": 0,
         "format-alt": "{:%R 󰃭 %d·%m·%y}",
         "tooltip-format": "<span>{calendar}</span>",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
@@ -125,6 +129,7 @@
 //        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 //        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "critical-threshold": 80,
+        "on-click": "foot -e watch sensors",
         "format-icons": ["", "", ""]
     },
     "memory": {
@@ -158,7 +163,8 @@
         "format": "{icon} {volume}",
         "rotate": 0,
         "format-muted": " ",
-        "on-click": "pwvucontrol",
+        "on-click": "alacritty --class=wiremix -e wiremix",
+        "on-click-right": "pamixer -t",
         //        "on-click-right": "~/.config/waybar/scripts/volumecontrol.sh -s ''",
         //        "on-click-middle": "~/.config/waybar/scripts/volumecontrol.sh -o m",
         //        "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",

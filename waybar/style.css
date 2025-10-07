@@ -1,14 +1,19 @@
 * {
-  font-family:"JetBrainsMono Nerd Font";
+  /* font-family:"JetBrainsMono Nerd Font"; */
+  /* font-family:"FiraCode Nerd Font"; */
+  /* font-family:"Hack Nerd Font"; */
+  font-family:"CaskaydiaMono Nerd Font";
   font-size: 15px;
 }
 
 #waybar {
-  background: #171717; 
-  /*background: #0a0a0a;*/
-  background-color: rgba(0,0,0,0.5);
-  box-shadow: none;
-  color: #fff;
+  /* background: #171717;  */
+  /* background: #0a0a0a; */
+  /* background-color: rgba(0,0,0,0.5); */
+  /* box-shadow: none; */
+  /* color: #fff; */
+  background: #1a1b26;
+  color: #cdd6f4;
 }
 
 #clock {
