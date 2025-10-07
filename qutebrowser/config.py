@@ -160,5 +160,5 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'stack': 'https://stackoverflow.com/search?q={}',
                        }
 
-#config.source('themes/onedark.py')
+config.source('themes/onedark.py')
 config.source('binds.py')
