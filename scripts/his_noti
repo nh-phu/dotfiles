@@ -1,0 +1,12 @@
+#!/bin/bash
+# Interactive Dunst History Browser with Rofi
+
+# Get history and create selection list
+selection=$(dunstctl history | jq -r '.data[][] | "\(.appname.data)│\(.summary.data)│\(.body.data)"' | \
+    column -t -s '│' | \
+    rofi -dmenu -i -p "Notification History" -format "s" -no-custom)
+
+if [ -n "$selection" ]; then
+    # Show full details of selected notification
+    echo "$selection" | rofi -dmenu -p "Details" -mesg "Selected notification details"
+fi
