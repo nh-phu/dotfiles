@@ -21,7 +21,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
 vim.opt.termguicolors = true
@@ -164,4 +164,5 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_scroll_animation_length = 0
     vim.g.neovide_hide_mouse_when_typing = true -- optional, feels snappier
+    vim.o.guifont = "Hack Nerd Font,Noto_Color_Emoji:h12"
 end

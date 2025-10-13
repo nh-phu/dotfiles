@@ -1,7 +1,7 @@
 @import "catppuccin-macchiato"
 configuration {
 /*	modes: "drun,run,ssh,keys,filebrowser,windows";*/
-	modes: "drun,recursivebrowser,ssh,emoji,window";
+	modes: "drun,emoji,window";
 /*	font: "mono 12";*/
 	location: 0;
 /*	yoffset: 0;*/
@@ -176,12 +176,4 @@ configuration {
     }
 }
 
-//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
-
-//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
-
-//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
-
 @theme "catppuccin-default"
-
-// @theme "/usr/share/rofi/themes/dmenu.rasi"

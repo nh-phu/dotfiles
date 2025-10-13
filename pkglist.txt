@@ -13,6 +13,8 @@ base-devel
 bash-completion
 bash-language-server
 bat
+bitwarden
+bitwarden-cli
 bluetui
 bluez
 bluez-deprecated-tools
@@ -72,10 +74,10 @@ gamemode
 gdu
 ghostty
 git
+gitlab
 glib2-devel
 gnome-keyring
 go
-gopass
 gparted
 gptfdisk
 graphviz
@@ -150,6 +152,7 @@ networkmanager
 nheko
 nicotine+
 niri
+nload
 nmap
 noto-fonts
 noto-fonts-cjk
@@ -174,6 +177,7 @@ pacman-contrib
 pamixer
 papirus-icon-theme
 pavucontrol
+pcp
 perl-image-exiftool
 pipewire-jack
 pipewire-pulse
@@ -218,10 +222,10 @@ spotifyd
 sshfs
 starship
 steam
-superfile
 sushi
 swaybg
 swayimg
+sysstat
 systemd-resolvconf
 tectonic
 telegram-desktop
@@ -292,6 +296,7 @@ wireguard-tools
 wiremix
 wireplumber
 wl-clipboard
+wl-mirror
 woff2-font-awesome
 wofi
 wtype

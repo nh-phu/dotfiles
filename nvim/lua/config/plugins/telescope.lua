@@ -63,10 +63,10 @@ return {
                     -- Key mappings inside telescope
                     mappings = {
                         i = {
-                            ["<C-n>"] = actions.cycle_history_next,
-                            ["<C-p>"] = actions.cycle_history_prev,
-                            ["<C-j>"] = actions.move_selection_next,
-                            ["<C-k>"] = actions.move_selection_previous,
+                            -- ["<C-n>"] = actions.cycle_history_next,
+                            -- ["<C-p>"] = actions.cycle_history_prev,
+                            ["<C-n>"] = actions.move_selection_next,
+                            ["<C-p>"] = actions.move_selection_previous,
                             ["<C-c>"] = actions.close,
                             ["<CR>"] = actions.select_default,
                             ["<C-x>"] = actions.select_horizontal,
@@ -150,12 +150,6 @@ return {
             -- Search
             vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Find word under cursor' })
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
-
-            -- Git (if you use git)
-            vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Git commits' })
-            vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Git branches' })
-            vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Git status' })
-            --    vim.keymap.set('n', '<leader>gp', builtin.git_push, { desc = 'Git push' })
 
             -- LSP (if you have LSP setup)
             vim.keymap.set('n', '<leader>lr', builtin.lsp_references, { desc = 'LSP references' })

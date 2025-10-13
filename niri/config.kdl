@@ -279,21 +279,18 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-sh-at-startup "waybar -c /home/puchan/.config/waybar/niribar.jsonc"
+// spawn-sh-at-startup "waybar -c /home/puchan/.config/waybar/niribar.jsonc"
 spawn-sh-at-startup "~/.local/bin/niri-wallpaper-start"
-// spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-at-startup "dunst"
+// spawn-at-startup "dunst"
 spawn-at-startup "fcitx5"
-spawn-sh-at-startup "~/.local/bin/capscape"
-// spawn-sh-at-startup "setxkbmap -option caps:escape" 
-// spawn-sh-at-startup "kitty -e setxkbmap -option caps:escape"
 spawn-sh-at-startup "~/.local/bin/check_bat"
 prefer-no-csd
 
-/* environment {
+environment {
     DISPLAY ":0"
-} */
+    QT_QPA_PLATFORM "wayland"
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -388,6 +385,8 @@ window-rule {
     match app-id="chrome-ailpjlcpaakbflcaodphfgngeplfkldn-Profile_2"
     match app-id="chrome-moodle.usth.edu.vn__-Profile_2"
     match app-id="chrome-erp.usth.edu.vn__students_learn_timetable-Profile_2"
+    match app-id="org.vinegarhq.Sober"
+    match title="Sober"
 
     open-maximized true
     //open-fullscreen false
@@ -401,6 +400,7 @@ window-rule {
     match app-id="com.saivert.pwvucontrol"
     match app-id="org.pulseaudio.pavucontrol"
     match app-id="wiremix"
+    match app-id="bluetui"
 
     match app-id="com.gabm.satty" // the screenshot edit
 
@@ -681,8 +681,8 @@ binds {
     Mod+U       { switch-layout "next"; }
     Mod+I { switch-layout "prev"; }
 
-    Print { spawn-sh "~/.local/bin/screenshot"; }
-    Mod+Shift+S { spawn-sh "~/.local/bin/screenshot"; }
+    Print { spawn-sh "~/.local/bin/scrshot"; }
+    Mod+Shift+S { spawn-sh "~/.local/bin/scrshot"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 

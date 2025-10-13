@@ -3,5 +3,6 @@ return {
   --{ "windwp/nvim-autopairs", config = true },
   -- Comment toggler
   { "numToStr/Comment.nvim", config = true },
+  {"lilydjwg/fcitx.vim"}
 }
 

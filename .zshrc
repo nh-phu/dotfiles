@@ -18,7 +18,8 @@ export TERMCMD='foot'
 
 # Input method support (Wayland/X11)
 export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=default
+export QT_IM_MODULE=fcitx
+export SDL_IM_MODULE=fcitx
 export XMODIFIERS=@im=default
 export INPUT_METHOD=default
 export LANG=en_US.UTF-8
@@ -45,9 +46,6 @@ alias vi='nvim'
 alias rm='rm -i'
 alias minifetch='fastfetch -c $HOME/.config/fastfetch/mini.jsonc'
 alias eza='eza --icons=always'
-# alias :q='exit'
-alias cat='bat'
-# alias clock='tty-clock -csS'
 alias batman='man bat'
 
 # ─── Bindings ───────────────────────────────────────────────────────────────

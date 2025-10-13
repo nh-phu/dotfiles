@@ -2,3 +2,4 @@ com.brave.Browser
 com.heroicgameslauncher.hgl
 dev.vencord.Vesktop
 org.localsend.localsend_app
+org.vinegarhq.Sober
