@@ -1,0 +1,28 @@
+[2025-10-15 22:25:57] Unreachable feed found: https://minhtule1510.wordpress.com/blog-posts/feed
+[2025-10-15 22:27:28] Unreachable feed found: https://minhtule1510.wordpress.com/blog-posts/feed
+[2025-10-15 22:27:35] Unreachable feed found: https://minhtule1510.wordpress.com/blog-posts/feed
+[2025-10-15 22:27:35] Unreachable feed found: https://minhtule1510.wordpress.com/feed
+[2025-10-15 22:28:01] Error while retrieving https://minhtule1510.wordpress.com/: unsupported feed format
+[2025-10-15 22:28:05] Unreachable feed found: https://minhtule1510.wordpress.com/feed/
+[2025-10-15 22:28:05] Unreachable feed found: https://minhtule1510.wordpress.com/blog-posts/feed
+[2025-10-15 22:28:05] Unreachable feed found: https://minhtule1510.wordpress.com/feed
+[2025-10-15 22:30:05] Unreachable feed found: https://minhtule1510.wordpress.com/blog-posts/feed
+[2025-10-15 22:30:05] Unreachable feed found: https://minhtule1510.wordpress.com/feed
+[2025-10-16 00:09:45] Error while retrieving https://github.com/nh-phu.private.atom: HTTP response code said error 401
+[2025-10-16 00:16:09] Error while retrieving https://www.facebook.com/groups/608821322646056/feed: unsupported feed format
+[2025-10-16 09:28:12] Error while retrieving https://.blog.ncase.me/feed.xml: Could not resolve hostname
+[2025-10-16 14:16:20] Error while retrieving https://www.youtube.com/channel/UC2_zZ8QA-J3r-UiATQImmWg: unsupported feed format
+[2025-10-16 14:38:31] Error while retrieving https://hoangthonglefoot.wordpress.com/: unsupported feed format
+[2025-10-16 18:15:26] Error while retrieving https://everyframeapainting.tumblr.com/rss: SSL connect error
+[2025-10-16 18:15:27] Error while retrieving https://webcomicname.com/rss: SSL connect error
+[2025-10-16 18:30:21] Error while retrieving ---Tech---: Error: unsupported URL: ---Tech---
+[2025-10-16 18:30:21] Error while retrieving ---Blog---: Error: unsupported URL: ---Blog---
+[2025-10-16 18:30:21] Error while retrieving ---Youtube---: Error: unsupported URL: ---Youtube---
+[2025-10-16 18:30:47] Error while retrieving ---Blog---: Error: unsupported URL: ---Blog---
+[2025-10-16 18:30:47] Error while retrieving ---Tech---: Error: unsupported URL: ---Tech---
+[2025-10-16 18:30:47] Error while retrieving ---Youtube---: Error: unsupported URL: ---Youtube---
+[2025-10-16 18:31:17] Error while retrieving ---Youtube---: Error: unsupported URL: ---Youtube---
+[2025-10-16 18:31:17] Error while retrieving ---Blog---: Error: unsupported URL: ---Blog---
+[2025-10-16 18:31:17] Error while retrieving ---Tech---: Error: unsupported URL: ---Tech---
+[2025-10-16 19:05:29] Error while retrieving rttps://www.scotthyoung.com/blog/feed: Error: unsupported URL: rttps://www.scotthyoung.com/blog/feed
+[2025-10-16 19:09:29] Error while retrieving ---Unread---: Error: unsupported URL: ---Unread---

@@ -1,0 +1,31 @@
+# ---Unread---
+# "query:Unread Articles:unread = \"yes\""
+
+"query:---Blog---:tags # \"Blog\""
+"query:minhtule:tags # \"minhtule\"" Blog
+https://minhtule1510.wordpress.com/feed/ "~minhtule1510's wordpress" minhtule !
+https://metulinh.wordpress.com/feed "~metulinh's wordpress" minhtule !
+
+"query:Nicky:tags # \"ncase\"" Blog
+https://blog.ncase.me/feed.xml ncase !
+https://ncase.me/feed.xml ncase !
+
+https://huyenchip.com/feed.xml "tech" Blog
+https://lukesmith.xyz/index.xml "tech" Blog
+https://hoquoctuan.substack.com/feed Blog
+https://hoangthonglefoot.wordpress.com/feed Blog
+https://everyframeapainting.tumblr.com/rss "cinema" Blog
+https://www.scotthyoung.com/blog/feed Blog
+https://webcomicname.com/rss
+
+"query:---Tech---:tags # \"Tech\""
+https://devops.vn/feed "tech" Tech
+https://archlinux.org/feeds/news/ Tech
+https://lwn.net/headlines/newrss Tech
+
+"query:---Youtube---:tags # \"Youtube\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwHwDuNd9lCdA7chyyquDXw Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC04nROIJrY22Gl2aFqKcdqQ Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVHxJghKAB_kA_5LMM8MD3w Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2_zZ8QA-J3r-UiATQImmWg Youtube
