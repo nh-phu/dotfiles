@@ -24,7 +24,6 @@ broot
 btop
 btrfs-assistant
 btrfs-progs
-calcurse
 calibre
 capitaine-cursors
 cava
@@ -47,6 +46,7 @@ dust
 easyeffects
 efibootmgr
 electron37
+entr
 ethtool
 evtest
 exfatprogs
@@ -104,8 +104,10 @@ inetutils
 inotify-tools
 intel-ucode
 inxi
+isync
 jq
 kdenlive
+keyd
 khal
 kid3
 kitty
@@ -134,6 +136,7 @@ lua-language-server
 lua51
 luarocks
 lxappearance
+lynx
 mako
 man-db
 man-pages
@@ -144,16 +147,19 @@ meson
 mpc
 mpd
 mpv
+msmtp
 mtools
 ncdu
 neovide
 neovim
 networkmanager
+newsboat
 nheko
 nicotine+
 niri
 nload
 nmap
+notmuch
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -176,6 +182,7 @@ otf-font-awesome
 pacman-contrib
 pamixer
 papirus-icon-theme
+pass
 pavucontrol
 pcp
 perl-image-exiftool
@@ -262,7 +269,7 @@ unp
 unrar
 unrar-free
 unzip
-uwsm
+urlscan
 vdirsyncer
 vim
 vimix-cursors
@@ -284,9 +291,11 @@ vlc-plugin-srt
 vlc-plugin-udev
 vlc-plugin-x264
 vlc-plugin-x265
+vlc-plugins-all
 vlc-plugins-visualization
 vulkan-intel
 vulkan-tools
+w3m
 waybar
 webkit2gtk-4.1
 weechat

@@ -11,10 +11,11 @@ fi
 
 # ─── Environment ─────────────────────────────────────────────────────────────
 export EDITOR=nvim
-export TERMINAL=foot
+export TERMINAL=alacritty
+export BROWSER=firefox
 export VISUAL=$EDITOR
 export MANPAGER="nvim +Man!"
-export TERMCMD='foot'
+export TERMCMD='alacritty'
 
 # Input method support (Wayland/X11)
 export GTK_IM_MODULE=fcitx
