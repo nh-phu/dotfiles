@@ -1,9 +1,9 @@
 vim.o.updatetime = 50
 vim.opt.termguicolors = true
+
 --set keymap for common actions
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
---vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })
 vim.opt.mouse = "a";
 vim.opt.gcr = "a:blinkon0"
 vim.opt.ignorecase = false
@@ -41,21 +41,19 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.showmode = false
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"text", "markdown"},
+  callback = function()
+    vim.opt.wrap= true
+  end
+})
+
 -- File type specific indentation
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "lua", "javascript", "typescript", "json", "yaml", "html", "css" },
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
-  end
-})
-
--- Keep 4 spaces for C, C++, and other languages
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "java", "python", "bash", "sh", "zsh", "rust" },
-  callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
   end
 })
 
@@ -131,7 +129,7 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
 }) ]]
 
 require("config.lazy")
-vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copilot', 'jdtls'})
+vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'jdtls'})
 -- LSP completion trigger
 
 --[[ vim.api.nvim_create_autocmd('LspAttach', {
@@ -147,6 +145,7 @@ vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'copil
   end,
 }) ]]
 
+-- native diagnostic
 vim.diagnostic.config({
   -- Use the default configuration
   virtual_lines = false
@@ -157,6 +156,8 @@ vim.diagnostic.config({
   --  current_line = true,
   -- },
 })
+
+-- neovide config
 if vim.g.neovide then
     vim.g.neovide_confirm_quit = true
     vim.g.neovide_cursor_trail_size = 1.0
