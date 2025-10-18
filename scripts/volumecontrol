@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 print_usage() {
   cat <<EOF
@@ -32,11 +32,14 @@ notify_vol() {
 notify_mute() {
   mute=$(pamixer --get-mute | cat)
   vol=$(pamixer --get-volume)
-  if [ "${mute}" == "true" ]; then
-    notify-send -a "volumecontrol.sh" -r 2 -t 800 -h int:value:"${vol}" -i "${icodir}/muted.svg" "muted" "${vol}"
-  else
-    notify-send -a "volumecontrol.sh" -r 2 -t 800 -h int:value:"${vol}" -i "${icodir}/volume-3.svg" "unmuted" "${vol}"
-  fi
+  case "$mute" in
+      "true")
+          notify-send -a "volumecontrol.sh" -r 2 -t 800 -h int:value:"${vol}" -i "${icodir}/muted.svg" "muted" "${vol}"
+          ;;
+      *)
+          notify-send -a "volumecontrol.sh" -r 2 -t 800 -h int:value:"${vol}" -i "${icodir}/volume-3.svg" "unmuted" "${vol}"
+          ;;
+  esac
 }
 
 change_volume() {

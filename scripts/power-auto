@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 echo "🔄 Restoring automatic power management..."
 sudo tlp start
 echo "✅ Auto power management restored!"

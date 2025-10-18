@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 OUTPUT_DIR="$HOME/Pictures/Screenshots"
 
-if [[ ! -d "$OUTPUT_DIR" ]]; then
+if [ ! -d "$OUTPUT_DIR" ]; then
   notify-send "Screenshot directory does not exist: $OUTPUT_DIR" -u critical -t 3000
   exit 1
 fi

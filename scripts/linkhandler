@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Feed script a url or file location.
 # If an image, it will view in nsxiv,
@@ -13,14 +13,14 @@ else
 fi
 
 case "$url" in
-	*mkv|*webm|*mp4|*youtube.com/v*|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
-		setsid -f mpv -quiet "$url" >/dev/null 2>&1 ;;
-	*png|*jpg*|*jpe|*jpeg|*gif|*webp)
+	*mkv|*webm|*mp4|*youtube.com/embed*|*youtube.com/v*|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
+		setsid -f mpv --fullscreen -quiet "$url" >/dev/null 2>&1 ;;
+	*png*|*jpg*|*jpe*|*jpeg*|*gif*|*webp*)
 		curl -sL "$url" > "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && imv "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
-	*pdf|*cbz|*cbr)
+	*pdf*|*cbz*|*cbr*)
 		curl -sL "$url" > "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && zathura "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
-	*mp3|*flac|*opus|*mp3?source*)
+	*mp3*|*flac*|*opus*|*mp3?source*)
 		qndl "$url" 'curl -LO'  >/dev/null 2>&1 ;;
 	*)
-		[ -f "$url" ] && setsid -f "$TERMINAL" -e "$EDITOR" "$url" >/dev/null 2>&1 || setsid -f "firefox" "$url" >/dev/null 2>&1
+		[ -f "$url" ] && setsid -f "$TERMINAL" -e "$EDITOR" "$url" >/dev/null 2>&1 || setsid -f "qutebrowser" "$url" >/dev/null 2>&1
 esac

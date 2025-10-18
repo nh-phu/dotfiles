@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 WALLPAPER_DIR="$HOME/wallpapers/"
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)

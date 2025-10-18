@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # Interactive Dunst History Browser with Rofi
 
 # Get history and create selection list

@@ -1,13 +1,16 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
-dry="--dry-run"
-[[ "$1" == "--real" ]] && dry=""
+case "$1" in
+    "--real") dry="" ;;
+    "") dry="--dry-run" ;;
+    *) exit 1 ;;
+esac
 
 for i in "$HOME/dotfiles/"*/; do
     dirname=$(basename "$i")
-    if [[ -d "$HOME/.config/$dirname" ]]; then
+    if [ -d "$HOME/.config/$dirname" ]; then
         rsync -avh $dry --progress --delete "$HOME/.config/$dirname/" "$i"
     fi
 done
@@ -22,12 +25,11 @@ flatpak list --app --columns=app >  "$HOME/dotfiles/flatpak.txt"
 rsync -avh $dry --progress "$HOME/.bashrc" "$HOME/dotfiles/.bashrc"
 rsync -avh $dry --progress "$HOME/.bash_profile" "$HOME/dotfiles/.bash_profile"
 # rsync -avh $dry --progress "$HOME/.bash_history" "$HOME/dotfiles/.bash_history"
-rsync -avh $dry --progress "$HOME/.zshrc" "$HOME/dotfiles/.zshrc"
-rsync -avh $dry --progress "$HOME/.zsh_history" "$HOME/dotfiles/.zsh_history"
+rsync -avh $dry --progress "$HOME/.zprofile" "$HOME/dotfiles/.zprofile"
+# rsync -avh $dry --progress "$HOME/.zsh_history" "$HOME/dotfiles/.zsh_history"
 rsync -avh $dry --progress "$HOME/.p10k.zsh" "$HOME/dotfiles/.p10k.zsh"
-rsync -avh $dry --progress "$HOME/.vimrc" "$HOME/dotfiles/.vimrc"
-rsync -avh $dry --progress "$HOME/.histfile" "$HOME/dotfiles/.histfile"
+rsync -avh $dry --progress $HISTFILE "$HOME/dotfiles/.histfile"
 
 rsync -avh $dry --progress --delete \
   --exclude-from="$HOME/dotfiles/.gitignore" \
-  "$HOME/.config/scripts/" "$HOME/dotfiles/scripts/"
+  "$HOME/.config/scripts" "$HOME/dotfiles/scripts/"

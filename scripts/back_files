@@ -30,4 +30,5 @@ files=(
   ~/wallpapers
 )
 
-sudo rsync -rtvh --progress --inplace --no-perms --no-owner --no-group --dry-run "${files[@]}" /mnt/ventoy
+sudo rsync -rtvh --progress --inplace --no-perms --no-owner --no-group --dry-run \
+    "${files[@]}" /mnt/ventoy

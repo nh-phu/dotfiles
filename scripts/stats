@@ -1,3 +1,25 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-notify-send "⏰ $(date '+%H:%M') | 🔋 $(cat /sys/class/power_supply/BAT*/capacity)%" "$(date '+%A, %B %d %Y')"
+time=$(date '+%H:%M')
+capacity=$(cat /sys/class/power_supply/BAT*/capacity)
+date=$(date '+%A, %B %d %Y')
+case "$(cat /sys/class/power_supply/BAT*/status)" in
+    "Discharging")
+        case "$capacity" in
+            100) bat_icon="󰁹" ;;
+            [90-99]) bat_icon="󰂂" ;;
+            [80-89]) bat_icon="󰂁" ;;
+            [70-79]) bat_icon="󰂀" ;;
+            [60-69]) bat_icon="󰁿" ;;
+            [50-59]) bat_icon="󰁾" ;;
+            [40-49]) bat_icon="󰁽" ;;
+            [30-39]) bat_icon="󰁼" ;;
+            [20-29]) bat_icon="󰁻" ;;
+            [10-19]) bat_icon="󰁺" ;;
+            [0-9]) bat_icon="󰂎" ;;
+        esac
+    ;;
+    *) bat_icon="" ;;
+esac
+
+notify-send "⏰ $time | $bat_icon $capacity%" "$date"

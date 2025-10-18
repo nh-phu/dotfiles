@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 echo "=== Current GPU Status ==="
 echo "Active renderer: $(glxinfo | grep "OpenGL renderer" | cut -d: -f2)"
 echo ""
