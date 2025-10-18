@@ -15,7 +15,9 @@ return {
           "bash",
           "c",
           "cpp",
+          "comment",
           "editorconfig",
+          "kdl",
           "diff",
           "java",
           "jsdoc",
@@ -31,6 +33,7 @@ return {
           "regex",
           "rust",
           "vim",
+          "vimdoc",
           "vimdoc",
         },
       })

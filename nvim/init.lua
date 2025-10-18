@@ -6,16 +6,27 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_set_keymap('n', '<leader>q', ':bd<CR>', { noremap = true })
 vim.opt.mouse = "a";
 vim.opt.gcr = "a:blinkon0"
-vim.opt.ignorecase = false
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.showmode = false
+vim.o.signcolumn = 'yes'
+vim.o.list = false
+vim.o.inccommand = 'split'
+vim.o.breakindent = true
+vim.o.spelllang = "en,fr,vi"
+vim.o.winborder = "rounded"
+vim.o.guifont = "FiraCode Nerd Font,Noto_Color_Emoji:h12"
+vim.o.splitbelow = true -- Split down and right
+vim.o.splitright = true
 
+vim.opt.wrap = false
+vim.opt.scrolloff = 4
+vim.opt.sidescrolloff = 5
 vim.opt.wrapscan = true
 vim.opt.swapfile = false
 
--- Set up basic options for Neovim
 vim.opt.colorcolumn = "80"
 
 vim.opt.nu = true
@@ -69,8 +80,6 @@ vim.keymap.set('n', '<A-k>', '<cmd>bprev<cr>', { silent = true })
 vim.keymap.set('n', '<A-Tab>', '<cmd>b#<cr>', { silent = true })
 vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<cr>',
   { noremap = true, silent = true })
-vim.opt.wrap = false
-vim.opt.scrolloff = 4
 
 -- Undo
 vim.opt.undofile = true                             -- Enable persistent undo
@@ -84,49 +93,26 @@ if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.mkdir(undo_dir, "p")
 end
 
--- Highlight yanked text briefly using the Visual highlight group
--- vim.api.nvim_create_autocmd("TextYankPost", {
---   desc = "Highlight when yanking text",
---   group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
---   callback = function()
---     vim.hl.on_yank()
---   end,
--- })
-
-local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
-end
-
--- Check if we need to reload the file when it changed
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-  group = augroup("checktime"),
-  callback = function()
-    if vim.o.buftype ~= "nofile" then
-      vim.cmd("checktime")
-    end
-  end,
-})
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
+  -- group = augroup("highlight_yank"),
   callback = function()
-    (vim.hl or vim.highlight).on_yank()
+    -- (vim.hl or vim.highlight).on_yank()
+    vim.hl.on_yank {}
   end,
 })
 
--- Disable relative numbers in insert mode
---[[ vim.api.nvim_create_autocmd({"InsertEnter"}, {
-  callback = function()
-    vim.opt.relativenumber = false
-  end,
-})
+vim.keymap.set({ 'n', 'v', 't' }, '<C-h>', '<C-\\><C-n><C-w>h')
+vim.keymap.set({ 'n', 'v', 't' }, '<C-j>', '<C-\\><C-n><C-w>j')
+vim.keymap.set({ 'n', 'v', 't' }, '<C-k>', '<C-\\><C-n><C-w>k')
+vim.keymap.set({ 'n', 'v', 't' }, '<C-l>', '<C-\\><C-n><C-w>l')
 
-vim.api.nvim_create_autocmd({"InsertLeave"}, {
-  callback = function()
-    vim.opt.relativenumber = true
-  end,
-}) ]]
+-- tab
+for i = 1, 9 do
+  vim.keymap.set({ 'n', 'v', 't' }, '<A-' .. i .. '>', function()
+    vim.cmd.tabnext(i)
+  end)
+end
 
 require("config.lazy")
 vim.lsp.enable({'clangd', 'rust-analyzer', 'lua_ls', 'bashls', 'pyright', 'jdtls'})
@@ -165,5 +151,4 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_scroll_animation_length = 0
     vim.g.neovide_hide_mouse_when_typing = true -- optional, feels snappier
-    vim.o.guifont = "Hack Nerd Font,Noto_Color_Emoji:h12"
 end
