@@ -4,6 +4,8 @@ reload-time 60
 reload-threads 100
 cache-file "~/.local/share/cache.db"
 save-path "~/Documents/newsboat"
+bookmark-cmd "~/.config/scripts/newsboat-bookmark"
+confirm-exit yes
 
 cleanup-on-quit yes
 error-log "~/.config/newsboat/error.log"
@@ -16,8 +18,6 @@ bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
 bind-key G end
 bind-key g home
-bind-key d pagedown
-bind-key u pageup
 bind-key l open
 bind-key h quit
 bind-key a toggle-article-read
@@ -38,7 +38,7 @@ macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
 macro a set browser "tsp yt-dlp --embed-metadata -xic -f bestaudio/best --restrict-filenames" ; open-in-browser ; set browser linkhandler
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
-macro w set browser "w3m" ; open-in-browser ; set browser linkhandler
+macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro d set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
 macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
 macro C set browser "youtube-viewer --comments=%u" ; open-in-browser ; set browser linkhandler

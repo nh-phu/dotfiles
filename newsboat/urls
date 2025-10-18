@@ -2,26 +2,31 @@
 # "query:Unread Articles:unread = \"yes\""
 
 "query:---Blog---:tags # \"Blog\""
-"query:minhtule:tags # \"minhtule\"" Blog
-https://minhtule1510.wordpress.com/feed/ "~minhtule1510's wordpress" minhtule !
-https://metulinh.wordpress.com/feed "~metulinh's wordpress" minhtule !
+"query:minhtule:tags # \"minhtule\""
+https://minhtule1510.wordpress.com/feed/ "~minhtule1510's wordpress" minhtule Blog !
+https://metulinh.wordpress.com/feed "~metulinh's wordpress" minhtule Blog !
 
-"query:Nicky:tags # \"ncase\"" Blog
-https://blog.ncase.me/feed.xml ncase !
-https://ncase.me/feed.xml ncase !
+"query:Nicky:tags # \"ncase\""
+https://blog.ncase.me/feed.xml ncase Blog !
+https://ncase.me/feed.xml ncase Blog !
 
-https://huyenchip.com/feed.xml "tech" Blog
+"query:huyenchip:tags # \"huyenchip\""
+https://huyenchip.com/feed.xml "tech" huyenchip Blog !
+https://rss.app/feeds/GHrsPvQXCBOOdPMN.xml huyenchip Blog !
+
 https://lukesmith.xyz/index.xml "tech" Blog
 https://hoquoctuan.substack.com/feed Blog
 https://hoangthonglefoot.wordpress.com/feed Blog
 https://everyframeapainting.tumblr.com/rss "cinema" Blog
 https://www.scotthyoung.com/blog/feed Blog
+https://bxt.rs/index.xml Blog
+https://3blue1brown.substack.com/feed Blog
 https://webcomicname.com/rss
 
 "query:---Tech---:tags # \"Tech\""
 https://devops.vn/feed "tech" Tech
 https://archlinux.org/feeds/news/ Tech
-https://lwn.net/headlines/newrss Tech
+https://lwn.net/headlines/rss Tech
 
 "query:---Youtube---:tags # \"Youtube\""
 https://www.youtube.com/feeds/videos.xml?channel_id=UCwHwDuNd9lCdA7chyyquDXw Youtube
