@@ -6,7 +6,6 @@ kotatsu-dl-git
 opencode-bin
 paru
 paru-debug
-pwvucontrol
 python-eyed3
 topgrade
 ttf-all-the-icons

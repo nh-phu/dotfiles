@@ -8,6 +8,7 @@ arch-wiki-docs
 arch-wiki-lite
 aspell
 audacity
+autoconf-archive
 base
 base-devel
 bash-completion
@@ -27,7 +28,9 @@ btrfs-progs
 calibre
 capitaine-cursors
 cava
+ccache
 chafa
+checkbashisms
 chntpw
 chromium
 cliphist
@@ -95,7 +98,6 @@ hyperfine
 hyprland
 hyprlock
 hyprpaper
-hyprpicker
 hyprpolkitagent
 hyprshot
 imagemagick
@@ -108,7 +110,6 @@ isync
 jq
 kdenlive
 keyd
-khal
 kid3
 kitty
 kmines
@@ -149,15 +150,19 @@ mpd
 mpv
 msmtp
 mtools
+nasm
 ncdu
 neovide
 neovim
+neovim-lspconfig
 networkmanager
+networkmanager-dmenu
 newsboat
 nheko
 nicotine+
 niri
 nload
+nm-connection-editor
 nmap
 notmuch
 noto-fonts
@@ -183,6 +188,7 @@ pacman-contrib
 pamixer
 papirus-icon-theme
 pass
+pastel
 pavucontrol
 pcp
 perl-image-exiftool
@@ -201,8 +207,10 @@ qbittorrent
 qemu-full
 qemu-user
 qpwgraph
+qrencode
 qt5-doc
 qt6-doc
+qt6-tools
 qutebrowser
 reflector
 riscv64-linux-gnu-binutils
