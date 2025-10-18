@@ -4,18 +4,15 @@ if [[ "$TERM" == "linux" ]]; then
     return
 fi
 
+# Use XDG dirs for completion and history files
+# [ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
+[ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+
 # ─── Powerlevel10k Instant Prompt (keep at top) ──────────────────────────────
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# ─── Environment ─────────────────────────────────────────────────────────────
-export EDITOR=nvim
-export TERMINAL=alacritty
-export BROWSER=firefox
-export VISUAL=$EDITOR
-export MANPAGER="nvim +Man!"
-export TERMCMD='alacritty'
 
 # Input method support (Wayland/X11)
 export GTK_IM_MODULE=fcitx
@@ -30,7 +27,7 @@ export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$PATH"
 
 # ─── History Settings ────────────────────────────────────────────────────────
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=10000
 SAVEHIST=20000
 
@@ -89,5 +86,7 @@ source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 source /home/puchan/.config/broot/launcher/bash/br

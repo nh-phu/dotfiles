@@ -66,3 +66,5 @@ set t_vb=
 " File type specific settings
 autocmd FileType c,cpp setlocal cindent
 autocmd FileType make setlocal noexpandtab
+
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
