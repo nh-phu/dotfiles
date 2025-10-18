@@ -1,10 +1,15 @@
+terminal.shell.program = "/usr/bin/zsh"
+
 [font]
-normal = { family = "Hack Nerd Font", style = "Mono" }
+# normal = { family = "Hack Nerd Font" }
+normal = { family = "FiraCode Nerd Font"}
+# normal = { family = "Monospace"}
 size = 12
 
 [window]
+padding = {x = 1, y = 0}
 opacity = 1
-blur = true
+blur = false
 
 [general]
 import = [
@@ -14,3 +19,6 @@ import = [
 [colors]
 cursor = { text = "CellBackground", cursor = "#cccccc" }
 vi_mode_cursor = { text = "CellBackground", cursor = "#cccccc" }
+
+[env]
+TERM = "xterm-256color"

@@ -10,18 +10,26 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "vim_mode": false,
+  "autosave": "off",
+
+  "buffer_font_family": "Fira Code",
+  "buffer_font_features": {
+    "calt": true
+  },
   "ui_font_size": 15,
   "buffer_font_size": 14,
+
   "theme": {
     "mode": "system",
     "light": "One Dark",
     "dark": "One Dark"
   },
+
+  "vim_mode": true,
   "confirm_quit": true,
-  "cursor_blink": true,
+  "cursor_blink": false,
   "cursor_shape": null,
-  "relative_line_numbers": false,
+  "relative_line_numbers": true,
   "vim": {
     "use_system_clipboard": "on_yank",
     "use_smartcase_find": true
