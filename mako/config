@@ -1,6 +1,7 @@
 # Mako configuration
 sort=-time
-layer=overlay
+layer=top
+# layer=overlay
 background-color=#2d3748
 text-color=#ffffff
 width=335
@@ -15,7 +16,7 @@ ignore-timeout=1
 font=monospace 11
 anchor=top-right
 outer-margin=20, 3
-group-by=summary
+group-by=app-name,summary
 
 [urgency=low]
 border-color=#38a169
